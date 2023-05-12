@@ -1,0 +1,145 @@
+
+/*------------FOOTER STYLE----------------*/
+.footerDiv{
+  position: absolute;
+  background-color: #b9bec3;
+  width: 100%;
+  padding: 20px;
+}
+/*.fa-facebook{
+  font-size: 35px;
+}
+.fa-instagram{
+  background-color:white;
+  border-radius:50%;
+  padding: 10px;
+}*/
+.social-media{
+  text-align: center;
+}
+.social-media ul li a {
+  display: inline-block;
+  text-align:center;
+  width: 35px;
+  height: 35px;
+  justify-content: space-around;
+  /*line-height: 45px;*/
+  border-radius: 50%;
+  font-size: 20px;
+  color: #b78c33;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+ }
+ .social-media ul> li{
+  display: inline-block;
+  margin:10px;
+ }
+.social-media ul li a:hover {
+  background: #b78c33;
+  color: #fff;
+  border-color: #b78c33; 
+}
+/*ul> li{
+  list-style:none;
+}*/
+.list li{
+  list-style:none;
+  font-style: 'Mukta';
+  font-weight: lighter;
+}
+.title:hover{
+  background-color:#b78c33;
+  color:white;
+  padding:5px;
+}
+.parentDiv{
+  display:flex;
+}
+.help-center, .Student-Information, .securityPolicy, .location{
+  /*width:50%;*/
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+.epLoc{
+  text-decoration: none;
+  color:black
+}
+.epLoc:hover{
+  color:#b78c33
+}
+@media screen and (max-width:550px){
+  .footerDiv{
+    position: absolute;
+    background-color: #727a82;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+  }
+  /*.fa-facebook{
+    font-size: 35px;
+  }
+  .fa-instagram{
+    background-color:white;
+    border-radius:50%;
+    padding: 10px;
+  }*/
+  .social-media{
+    text-align: center;
+  }
+  .social-media ul li a {
+    display: inline-block;
+    text-align:center;
+    width: 35px;
+    height: 35px;
+    justify-content: space-around;
+    /*line-height: 45px;*/
+    border-radius: 50%;
+    font-size: 20px;
+    color: #b78c33;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+   }
+   .social-media ul> li{
+    display: inline-block;
+    margin:10px;
+   }
+  .social-media ul li a:hover {
+    background: #b78c33;
+    color: #fff;
+    border-color: #b78c33; 
+  }
+  /*ul> li{
+    list-style:none;
+  }*/
+  .list li{
+    list-style:none;
+    font-style: 'Mukta';
+    font-weight: lighter;
+  }
+  .title:hover{
+    background-color:#b78c33;
+    color:white;
+    padding:5px;
+  }
+  .parentDiv{
+    display: list-item;
+    list-style:none;
+  }
+  .help-center, .Student-Information, .securityPolicy, .location{
+    /*width:50%;*/
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+  .epLoc{
+    text-decoration: none;
+    color:black
+  }
+  .epLoc:hover{
+    color:#b78c33
+  }
+}
+ul > li a{
+  text-decoration: none;
+  color: black;
+ 
+}

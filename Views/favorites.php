@@ -4,7 +4,6 @@ include "../Model/connection.php";
 <?php
 $title = "favorites";
 $individualStyle = "../assets/css/favorite.css";
-// $individualStyle = '../assets/css/StudentHomePageStyle.css';
 require_once './navbar.php';
 ?>
 
@@ -40,7 +39,7 @@ require_once './navbar.php';
           <a href='#' class='btn btn-primary' '>Read more</a>
           </li>
           <li class='buttons-li'>
-          <button id ='".$row['BookId']."' class ='btn btn-primary unorder-button'>Unorder</button>
+          <button class ='btn btn-primary unorder-button'>Unorder</button>
           </li>
           <li class='buttons-li'>
           <button id = '".$row['BookId']."' class ='btn btn-primary unfavorite-button'><img src='../assets/images/favorite.png' style='width:25px'></button>";
@@ -79,3 +78,5 @@ require_once './navbar.php';
     });
   });
 </script>
+  </div>
+</div>
