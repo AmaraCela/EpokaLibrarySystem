@@ -1,0 +1,45 @@
+body{
+  background-color:#00458C;
+}
+.formLabel{
+  color:  #dc6f02;
+  font-family: 'Mukta',sans-serif;
+}
+.card{
+  background-color: white;
+  
+}
+.h1{
+  font-weight: bold;
+  font-family:'Mukta',sans-serif;
+  display:table;
+  margin-left: auto;
+  margin-right: auto;
+}
+h5{
+  font-weight: normal;
+  letter-spacing:
+  1px; font-family:'Mukta',sans-serif;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn{
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+.form-control{
+  border-radius: 0;
+}
+
+.selectBox{
+  padding: 5px;
+}
+.logoImg{
+  /* display: block;
+  margin: 0 auto; */
+  width: 10%;
+  height: 5%;
+}
