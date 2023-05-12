@@ -38,7 +38,7 @@
               <input name = "email" class = "form-control form-control-lg">
               <label class = "formLabel" name = "emailLabel">Email</label>
               <br>
-              <?php include '../Controller/validateData.php'?>
+              <?php include '../Controller/validateDataSignup.php'?>
             </div>
             <div class = "form-outline mb-4">
               <select name = "country" id="country" class="selectBox" required>
