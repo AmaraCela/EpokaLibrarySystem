@@ -1,6 +1,5 @@
 <?php
 $title = "Home";
-
 $individualStyle = "../assets/css/StudentHomePageStyle.css";
 require_once "./navbar.php";
 ?>
@@ -51,24 +50,24 @@ document.querySelectorAll('.more-button').forEach(button => {
       data: {bookId: bookId},
       success: function(response) {
         
-       
-        req.open('GET','../Model/get_book_info.php',true);
-        req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      
+      req.open('GET','../Model/get_book_info.php',true);
+      req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-             req.onreadystatechange = function() {
-              
-               if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-                 // Do something with the response if necessary
-               <?php 
-              echo"
-              document.getElementById('side-p').innerText = '{$_SESSION['Title']}'+'<br>{$_SESSION['Author']}{$_SESSION['Description']}';";
-              ?>
+            req.onreadystatechange = function() {
+            
+              if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                // Do something with the response if necessary
+              <?php 
+            echo"
+            document.getElementById('side-p').innerText = '{$_SESSION['Title']}'+'<br>{$_SESSION['Author']}{$_SESSION['Description']}';";
+            ?>
 
-                 document.getElementsByClassName('side-panel')[0].style.display = 'block';
-                 console.log(this.responseText);
-               }
-             };
-             req.send();
+                document.getElementsByClassName('side-panel')[0].style.display = 'block';
+                console.log(this.responseText);
+              }
+            };
+            req.send();
 
       }
     });
@@ -99,4 +98,4 @@ document.querySelectorAll('.more-button').forEach(button => {
     }
 </script>
 </div>
- 
+<!-- <?php readfile('./footer.html');?> -->
