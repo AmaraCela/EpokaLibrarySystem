@@ -11,7 +11,7 @@
         crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Open+Sans&family=Overpass&display=swap"
         rel="stylesheet">
-  <link rel = "stylesheet" href = "../assets/css/login.css">
+  <link rel = "stylesheet" href = "../assets/css/signup.css">
   <title>Sign up</title>
 </head>
 <body >

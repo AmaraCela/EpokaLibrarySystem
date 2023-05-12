@@ -1,45 +1,31 @@
-body{
+img{
+  margin-top:150px;
+  height: 250px;
+}
+.signUpReq{
+  color:red;
+  font-weight: 400px;
+  font-family: 'Mukta';
+}
+section{
   background-color:#00458C;
 }
-.formLabel{
-  color:  #dc6f02;
-  font-family: 'Mukta',sans-serif;
-}
-.card{
-  background-color: white;
-  
-}
 .h1{
-  font-weight: bold;
-  font-family:'Mukta',sans-serif;
-  display:table;
-  margin-left: auto;
-  margin-right: auto;
+  font-family: 'Mukta';
 }
 h5{
+  font-family:'Mukta';
+  letter-spacing: 1px;
   font-weight: normal;
-  letter-spacing:
-  1px; font-family:'Mukta',sans-serif;
-  display: table;
-  margin-left: auto;
-  margin-right: auto;
+}
+.formReq{
+  color: #dc6f02; 
+  font-family: 'Mukta';
 }
 .btn{
-  display: table;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
+  font-family: 'Mukta';
 }
-.form-control{
-  border-radius: 0;
-}
-
-.selectBox{
-  padding: 5px;
-}
-.logoImg{
-  /* display: block;
-  margin: 0 auto; */
-  width: 10%;
-  height: 5%;
+.link{
+  font-family: 'Mukta';
+  color: cadetblue
 }
