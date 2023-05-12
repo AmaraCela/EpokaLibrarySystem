@@ -36,7 +36,7 @@ include "../Model/connection.php";
                   <form name = "LoginPage" action = "" method = "post">
   
                     <div class="d-flex align-items-center mb-3 pb-1">
-                      <span class="h1 fw-bold mb-0" >EPOKA Library System</span>
+                      <span class="h1 fw-bold mb-0">EPOKA Library System</span>
                     </div>
   
                     <h5 class="mb-3 pb-3" >Sign into your account</h5>
