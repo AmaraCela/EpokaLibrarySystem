@@ -23,8 +23,9 @@ require_once "./navbar.php";
         <ul class='buttons-ul'>
         <li class ='buttons-li'><button title='Press for more' id='".$row["BookId"]."' class='btn btn-primary more-button'> More</a></li>
         <li class ='buttons-li'><button title='Order book' id='".$row["BookId"]."' class='btn btn-primary order-button'> Order</a></li>
-        <li class ='buttons-li'>
-        <button title='Save book'class ='btn btn-primary favorite-button'><img src='../assets/images/favorite.png' style='width:25px'></button></li>
+      <li class ='buttons-li'>
+      <button title='Save book' class ='btn btn-primary favorite-button' id='".$row["BookId"]."><img src='../assets/images/favorite.png' style='width:25px'></button></li>
+
         </ul>
         </div>
         </div>

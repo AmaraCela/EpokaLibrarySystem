@@ -1,6 +1,6 @@
 <?php
 $title = "Ordered";
-$individualStyle = "assets/css/StudentHomePageStyle.css";
+$individualStyle = "../assets/css/StudentHomePageStyle.css";
 require_once "./navbar.php";
 ?>
 
@@ -49,7 +49,7 @@ while ($row = $titles->fetch_assoc())
 <script>
 
     document.querySelectorAll('.order-button').forEach(button=>{
-        button.addEventistener('click',function(event)
+        button.addEventListener('click',function(event)
         {
             event.target.disabled = true;
 

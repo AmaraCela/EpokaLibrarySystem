@@ -25,7 +25,7 @@ include "../Model/connection.php";
           //base64_encode($row['Pic']);
         ?>
         <script>
-          window.location = "mainPage.php";
+          window.location = "../Views/StudentHomePage.php";
           </script>
         <?php
       }

@@ -1,8 +1,8 @@
 document.querySelectorAll('.favorite-button').forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function(event) {
       console.log('clicked');
       
-
+      // event.target.disabled = true;
       // get the ID of the clicked element
     var bookId = event.target.id;
     console.log(bookId);
@@ -12,7 +12,7 @@ document.querySelectorAll('.favorite-button').forEach(button => {
     url: '../Model/set_book_id.php',
     data: { bookId: bookId },
     success: function(response) {
-      console.log("success");
+      console.log(response);
     }
   });
       // Send a request to the PHP script
@@ -20,7 +20,7 @@ document.querySelectorAll('.favorite-button').forEach(button => {
       xhr.open('POST', '../Model/favoriteQuery.php', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.onreadystatechange = function() {
-        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        if (this.readyState === 4 && this.status === 200) {
           // Do something with the response if necessary
           console.log(this.responseText);
         }

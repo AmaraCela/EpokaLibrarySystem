@@ -16,14 +16,14 @@
 </head>
 <body >
   <div class = "container py-5">
-    <!-- <img src = "../assets/images/epLogo.png" alt="Epoka Logo" class="logoImg"> -->
     <div class = "row d-flex justify-content-center align-items-center">
       <div class = "col-xs-5 col-md-7 col-lg-7 d-flex align-items-center">
         <div class = " card card-body  p-4 p-lg-7 text-black"
             style="border: 1px solid; padding: 10px; --bs-card-border-radius: none">
           <form name = "SignUp" action = "" method = "POST">
             <div class = "d-flex align-items-center mb-3 pb-1">
-            <span class="h1 mb-0" >EPOKA Library System</span>
+            <span class="h1 mb-0" ><img src = "../assets/images/epokaLogo.png" alt="Epoka Logo"
+            class="logoImg">EPOKA Library System</span>
             </div>
             <h5 class="mb-3 pb-3">Sign into your account</h5>
             <div class = "form-outline mb-4">
