@@ -1,11 +1,11 @@
 <?php
 $title = "Ordered";
-$individualStyle = "assets/css/StudentHomePageStyle.css";
+$individualStyle = "../assets/css/orderedStyle.css";
 require_once "./navbar.php";
 ?>
 
 <div class="container">
-<div>
+
 <?php
 $query = "SELECT b.BookId,b.Title,b.Author,b.Genre,b.Image,b.Description,o.DateOrdered
 FROM books b, ordered o
@@ -23,7 +23,7 @@ while ($row = $titles->fetch_assoc())
     echo"
     <div class='col-sm-4 mb-3 mb-sm-0'>
     <div class='card' style='width: 18rem;'>
-    <img src='data:image/png;base64," . base64_encode($row['Image']) . "' class='card-img-top' alt='photo' style='width: 150px; height: 200px;'>
+    <img src='data:image/png;base64," . base64_encode($row['Image']) . "' class='card-img-top' alt='photo'>
     <div class='card-body'>
     <h6 class='card-title'>".$row["Title"]."</h6>
     <p class='card-text'>Author:".$row["Author"]."<br>
@@ -46,39 +46,6 @@ while ($row = $titles->fetch_assoc())
     ";
 }
 ?>
-<script>
+<script src="../Controller/deleteOrders.js"></script>
 
-    document.querySelectorAll('.order-button').forEach(button=>{
-        button.addEventistener('click',function(event)
-        {
-            event.target.disabled = true;
-
-            var request = new XMLHttpRequest();
-            var bookId = event.target.id;
-
-            $.ajax({
-                type:'POST',
-                url:'../Model/set_book_id.php',
-                data:{bookId:bookId},
-                success:function(response)
-                {
-                    request.open('POST','../Model/deleteQuery.php',true);
-                    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                    request.onreadystatechange = function()
-                    {
-                        if(this.readyState ===4 && this.status === 200)
-                        {
-                            window.location = './orderedPage.php';
-                        }
-                    }
-                    request.send();
-                        
-                }
-            });
-            
-        });
-    });
-    </script>
-
-</div>
 </div>
