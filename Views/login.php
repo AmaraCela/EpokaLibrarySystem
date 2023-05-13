@@ -60,7 +60,7 @@ include "../Model/connection.php";
                     </div>
   
                     <!--<a class="small text-muted" href="#!">Forgot password?</a>-->
-                    <p class="formReq mb-5 pb-lg-2">Don't have an account? <a href= "signup.php"
+                    <p class="formReq mb-5 pb-lg-2">Don't have an account? <a href= "./signup.php"
                         style="color: #2062c5;; font-family: Mukta;">Register here</a></p>
                     <a href="#!" class="link small text-muted">Terms of use.</a>
                     <a href="#!" class="link small text-muted">Privacy policy</a>

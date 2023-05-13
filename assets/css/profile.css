@@ -24,11 +24,11 @@ input[type=file]{
 }
 .imgUp{
   color: #00458C;
-  margin-top: 10%;
+  /* margin-top: 15%; */
 }
-figure{
-  margin-top: 20%;
-}
+/* figure{
+  margin-top: 5%;
+} */
 .table{
   border-color: #00458C;
   border-width: 100%;
