@@ -1,11 +1,11 @@
 document.querySelectorAll('.favorite-button').forEach(button => {
     button.addEventListener('click', function(event) {
-      console.log('clicked');
+     
       
-      // event.target.disabled = true;
+      
       // get the ID of the clicked element
     let bookId = event.target.id;
-    
+    button.disabled = true;
   // make an AJAX POST request to a PHP script
   $.ajax({
     type: 'POST',
@@ -13,6 +13,7 @@ document.querySelectorAll('.favorite-button').forEach(button => {
     data: { bookId: bookId },
     success: function(response) {
       console.log(response);
+
     }
   });
       // Send a request to the PHP script
@@ -27,4 +28,28 @@ document.querySelectorAll('.favorite-button').forEach(button => {
       };
       xhr.send();
     });
-  });
+});
+
+
+  let reqq = new XMLHttpRequest();
+
+  reqq.open("GET","../Controller/validateFavorites.php",true);
+
+  console.log("lessgo");
+  reqq.onreadystatechange = function()
+  {
+    console.log(reqq.readyState);
+    console.log(reqq.status);
+    if(reqq.status===200 && reqq.readyState===4)
+    {
+        let array = JSON.parse(reqq.response);
+        console.log(array);
+        for(let i=0;i<array.length;i++)
+        {
+          // console.log(document.querySelector("button img[id='"+array[i]+"']"));
+          document.querySelector("button img[id='"+array[i]+"']").parentElement.disabled = true;
+        }
+    }
+  }
+
+  reqq.send();
