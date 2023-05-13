@@ -24,11 +24,11 @@ input[type=file]{
 }
 .imgUp{
   color: #00458C;
-  margin-top: 10%;
+  /* margin-top: 15%; */
 }
-figure{
-  margin-top: 20%;
-}
+/* figure{
+  margin-top: 5%;
+} */
 .table{
   border-color: #00458C;
   border-width: 100%;
@@ -57,7 +57,7 @@ figure{
   text-align: center;
   color: white;
 }
-.img2{
+.img2, .img1{
   /* height:30%; */
   width:100%;
   height: 100%;

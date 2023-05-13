@@ -2,6 +2,7 @@
 $title = "Home";
 $individualStyle = "../assets/css/StudentHomePageStyle.css";
 require_once "./navbar.php";
+
 ?>
 <div class = "wrapper">
 <div class ="container">
@@ -15,15 +16,15 @@ require_once "./navbar.php";
         <div class='card' style='width:18rem;'>
         <img src='data:image/png;base64," . base64_encode($row['Image']) . "' class='card-img-top' alt='photo'>
         <div class='card-body'>
-        <h6 class='card-title'>".$row["Title"]."</h6>
-        <p class='card-text'><b>Author: </b>".$row["Author"]."<br>
-        <b>Genre: </b>".$row["Genre"]."<br>
+        <h6 class='card-title'>".$row['Title']."</h6>
+        <p class='card-text'><b>Author: </b>".$row['Author']."<br>
+        <b>Genre: </b>".$row['Genre']."<br>
         </p>
         <ul class='buttons-ul'>
-        <li class ='buttons-li'><button title='Press for more' id='".$row["BookId"]."' class='btn btn-primary more-button'> More</a></li>
-        <li class ='buttons-li'><button title='Order book' id='".$row["BookId"]."' class='btn btn-primary order-button'> Order</a></li>
+        <li class ='buttons-li'><button title='Press for more' id='".$row['BookId']."' class='btn btn-primary more-button'> More</a></li>
+        <li class ='buttons-li'><button title='Order book' id='".$row['BookId']."' class='btn btn-primary order-button'> Order</a></li>
       <li class ='buttons-li'>
-      <button title='Save book' class ='btn btn-primary favorite-button'><img src='../assets/images/favorite.png' id='".$row["BookId"]."' style='width:25px'></button></li>
+      <button title='Save book' class ='btn btn-primary favorite-button' ><img id='".$row['BookId']."' src='../assets/images/favorite.png' style='width:25px'></button></li>
 
         </ul>
         </div>
@@ -37,38 +38,32 @@ require_once "./navbar.php";
     
 <script src="../Controller/orderScript.js"></script>
 <script src='../Controller/favoriteScript.js'></script>
-
 <script>
 document.querySelectorAll('.more-button').forEach(button => {
   button.addEventListener('click', function(event) {
     console.log(event.target.id);
-    var bookId = event.target.id;
-    var req = new XMLHttpRequest();
+    var id = event.target.id;
     $.ajax({
       type: 'POST',
-      url: '../Model/set_book_id.php',
-      data: {bookId: bookId},
+      url: '../Model/set_book_id_for_more.php',
+      data: {id:id},
       success: function(response) {
-        
-      
-      req.open('GET','../Model/get_book_info.php',true);
-      req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        console.log(response);
 
-            req.onreadystatechange = function() {
+        var req = new XMLHttpRequest();
+            req.open('GET','../Model/get_book_info.php?response='+response,true);
             
-              if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-                // Do something with the response if necessary
-              <?php 
-            echo"
-            document.getElementById('side-p').innerText = '{$_SESSION['Title']}'+'<br>{$_SESSION['Author']}{$_SESSION['Description']}';";
-            ?>
-
+            req.onreadystatechange = function() {
+              
+            
+              if (this.readyState == 4 && this.status == 200) {
+                document.getElementById('side-p').innerHTML = "<b>Title: <?php echo $_SESSION['Title'].'</b> <br> <b>Author: '.$_SESSION['Author'].'</b> <br>'.$_SESSION['Description'];?>";
+                
+                document.getElementsByClassName('side-panel')[0].style.transition = '600ms';
                 document.getElementsByClassName('side-panel')[0].style.display = 'block';
-                console.log(this.responseText);
               }
             };
             req.send();
-
       }
     });
    
@@ -98,4 +93,6 @@ document.querySelectorAll('.more-button').forEach(button => {
     }
 </script>
 </div>
+<?php
+require_once "./footer.html"?>
 <?php require_once 'footer.html'?>

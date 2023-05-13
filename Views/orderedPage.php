@@ -3,9 +3,16 @@ $title = "Ordered";
 $individualStyle = "../assets/css/orderedStyle.css";
 require_once "./navbar.php";
 ?>
-
-<div class="container">
-
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset = "UTF-8">
+  <meta http-equiv = "X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+  <div class="container">
 <?php
 $query = "SELECT b.BookId,b.Title,b.Author,b.Genre,b.Image,b.Description,o.DateOrdered
 FROM books b, ordered o
@@ -49,7 +56,7 @@ while ($row = $titles->fetch_assoc())
 <script>
 
     document.querySelectorAll('.order-button').forEach(button=>{
-        button.addEventistener('click',function(event)
+        button.addEventListener('click',function(event)
         {
             event.target.disabled = true;
 
@@ -82,3 +89,5 @@ while ($row = $titles->fetch_assoc())
 
 </div>
 </div>
+  </body>
+</html>
