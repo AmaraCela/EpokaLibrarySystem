@@ -1,141 +1,133 @@
-.navbar-collapse{
-    justify-content: right;
-}
-
-.navbar-nav{
-    margin-right: 0!important;
-    justify-content: space-between;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-}
-
-.container-fluid{
-    background-color: #01458c;
-    margin-top: 60px;
-    line-height: 67px!important;
-    position: fixed;
-    z-index: 9999999;
+.nav-item
+{
+    margin-left: 20px; 
+    margin-top: 8px; 
     
 }
-
+.navbar-collapse.show{
+  background-color: #01458c;
+}
 .nav-link{
-    color: white;
-    margin-right: 17px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
-}
-.navbar-nav .nav-link.active{
-    color: white;
-   
-}
-
-.navbar-brand:hover {
-    color: white;
-}
-.navbar-brand-img{
-    width: 40px;
-    height:60px;
-}
-.navbar-brand{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    line-height: normal;
-    color: white;
-    margin-right: 30px;
-    
-}
-.navbar{
-    padding: 0;
-}
-
-.collapse{
-    margin-left: 100px;
-    display: block;
-    
-}
-.d-flex{
-    margin-right: 20px;
-    margin-top: 25px;
-    
-}
-
-.btn-outline-success{
-    height: 40px;
-    color: white;
-}
-
-.btn.btn-outline-success{
-    color: white;
-    border-color: black;
+    color: white!important;
 }
 
 .btn.btn-outline-success:hover{
-    background-color: white;
-    color: #01458c;
+  background-color: white;
+  color: #01458c;
 }
-.dropdown-menu{
-    background-color:rgba(187, 137, 0, 1)!important;
-    display: none;
-    border-radius: 0!important;
+
+.d-flex{
+    margin-left: 40px;
+    margin-top: 8px;
+    
+}
+.collapse{
+    /* margin-left: 100px; */
+    display: block;
+    
+}
+.navbar-brand-img{
+    width: 40px;
+    height:50px;
+}
+.navbar-brand{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    line-height: normal;
+    color: white!important;
+}
+.container-fluid{
+    background-color: #01458c;
+    height: 80px;
+    margin-top: 0px;
+    padding-top: 0px;
+    position: fixed;
+    top: 0;
+    margin-bottom: 10px;
+    z-index: 999;
+}
+.navbar{
+    padding-top: 0px;
+    
+}
+.dropdown-item{
+  margin: 0;
+  line-height: 20px;
+  align-self: center;
+  color: white;
+}
+
+.dropdown-menu.show{
+  background-color:rgba(187, 137, 0, 1);
+  display: block;
+  border-radius: 0; 
+}
+.dropdown-item:hover{
+  background-color: white;
+  color:rgba(187, 137, 0, 1)!important;
+}
+
+.nav-link:hover{
+  color: white!important;
+  transition: 0ms;
+}
+
+.nav-item:hover,.nav-item.dropdown:hover{
+  color: white!important;
+  transition: 300ms;
+}
+
+.navbar-nav .nav-link:focus {
+  color: white;
 }
 
 .dropdown:hover .dropdown-menu{
-    display: block;
+  background-color: rgba(187, 137, 0, 1);
+  display: block;
+}
+.btn-outline-success{
+  height: 40px;
+  color: white;
+}
+
+.btn.btn-outline-success{
+  color: white;
+  border-color: black;
+}
+.dropdown-menu{
+    border-radius: 0%!important;
+    transition: 600ms;
+}
+
+/* .dropdown-toggle.show:hover{
+   transition: 600ms;
+} */
+
+.dropdown-item{
+    color: white!important;
+}
+
+.navbar-nav{
+    align-content: center;
+    align-self: center;
 }
 
 .dropdown-menu.show{
     background-color:rgba(187, 137, 0, 1);
-    display: block;
-    
-    border-radius: 0; 
 }
-
-.dropdown-item{
-    margin: 0;
-    line-height: 20px;
-    align-self: center;
-    color: white;
-}
-
 
 .dropdown-item:hover{
-    color: white;
+    background-color: white;
     color:rgba(187, 137, 0, 1)!important;
 }
-
-.nav-link:hover{
-    color: white!important;
-    transition: 0ms;
-}
-
-.nav-item:hover,.nav-item.dropdown:hover{
-    color: white!important;
-    transition: 300ms;
-
-}
-
-.navbar-nav .nav-link:focus {
-    color: white;
-}
-
-
 @media screen and (max-width:990px) {
-    a.nav-link{
-        margin-left: 40px;
-    }
-    .container-fluid{
-        position: fixed;
-        margin-top: 0;
-        top: 0;
-        line-height: 40px!important;
-    }
-
-    .collapse
-    {
-        margin-left: 0;
-    }
+  a.nav-link{
+      margin-left: 40px;
+  }
+  .container-fluid{
+      position: fixed;
+      margin-top: 0;
+      top: 0;
+  }
 }
-
-
- 

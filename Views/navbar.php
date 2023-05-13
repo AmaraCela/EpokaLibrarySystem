@@ -9,11 +9,14 @@ include "../Model/connection.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Browse Epoka Online Library system">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://kit.fontawesome.com/9cfc78147e.js" crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Open+Sans&family=Overpass&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/9cfc78147e.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+  rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+  crossorigin="anonymous">
+  <link href = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js">
+<link rel = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Open+Sans&family=Overpass&display=swap"
+  rel="stylesheet">
     <link rel="icon" href="../assets/images/epokaLogo.png">
     <link rel="stylesheet" href = "../assets/css/navbarStyle.css" type="text/css">
     <?php echo"<link rel='stylesheet'href='".$individualStyle."'>";?>
@@ -34,7 +37,7 @@ include "../Model/connection.php";
                         <a class="nav-link active" aria-current="page" href="./StudentHomePage.php">Home</a>
                      </li>
                     
-                     <!-- The categories dropdown -->
+                    <!-- The categories dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
                         <ul class="dropdown-menu">
@@ -77,7 +80,7 @@ include "../Model/connection.php";
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">My Books</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Favorites</a></li>
+                            <li><a class="dropdown-item" href="./favorites.php">Favorites</a></li>
                             <li><a class="dropdown-item" href="./orderedPage.php">Ordered</a></li>
                             
                         </ul>
@@ -99,17 +102,30 @@ include "../Model/connection.php";
                 </script>
 
                 </li>
-                   
                     <!-- Profile dropdown -->
                     <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">My Profile</a></li>
+                    <!-- <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profile</a> -->
+                    <?php 
+            if($_SESSION['pic']!=""){
+              echo "<img src='data:image/jpeg;base64,".base64_encode($_SESSION['pic'])."'class = 'img-circle profile-img' height=40 width=40>";
+            }
+            echo " ";
+            if(isset($_SESSION['login_user_name'], $_SESSION['login_user_surname'])){
+              echo $_SESSION['login_user_name']," ",$_SESSION['login_user_surname']; 
+            }
+            else{
+              echo"";
+              // echo"session is not set";
+            }
+            ?>
+          </a>
+                    <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./profile.php">My Profile</a></li>
                             <li><a class="dropdown-item" href="./login.php">Log Out</a></li>   
                         </ul> 
                     </li>
                 </ul>
-         </div>
+        </div>
         </div>
     </nav>
     <script>

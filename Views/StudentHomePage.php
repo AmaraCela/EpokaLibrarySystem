@@ -94,10 +94,10 @@ document.querySelectorAll('.more-button').forEach(button => {
 <script>
     function cancelSide()
     {
-       document.getElementsByClassName("side-panel")[0].style.display = "none";
+      document.getElementsByClassName("side-panel")[0].style.display = "none";
     }
 </script>
 </div>
-<!-- <?php readfile('./footer.html');?> -->
 <?php
 require_once "./footer.html"?>
+<?php require_once 'footer.html'?>
