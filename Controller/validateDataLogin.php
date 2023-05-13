@@ -16,7 +16,7 @@ include "../Model/connection.php";
         <i class="fa-solid fa-circle-info"></i>
         <label class = "signUpReq">Email and password do not match.</label>
         <?php
-      }else{
+      }else {
           $_SESSION['email'] = $_POST['email'];
           $_SESSION['id'] = $row['id'];
           $_SESSION['login_user_name'] = $row['Name'];

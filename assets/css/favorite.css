@@ -12,7 +12,7 @@
 }
 
 .row{
-  margin-top: 50px;
+  margin: 50px;
   width: 100%;
   border-radius: 0%;
   display: flex;
@@ -190,10 +190,9 @@
 }
 .card-body:hover .card-content {
   display: block;
-
 }
 .card-body:hover {
   width: 350px;
-  height: 280px;
+  height: 300px;
 }
 

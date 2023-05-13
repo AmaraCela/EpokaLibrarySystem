@@ -27,11 +27,11 @@
             </div>
             <h5 class="mb-3 pb-3">Sign into your account</h5>
             <div class = "form-outline mb-4">
-              <input name = "name" class="form-control form-control-lg">
+              <input name = "name" class="form-control form-control-lg" minlength='3' required>
               <label class = "formLabel" name = "nameLabel">First Name</label>
             </div>
             <div class = "form-outline mb-4">
-              <input name = "surname" class = "form-control form-control-lg">
+              <input name = "surname" class = "form-control form-control-lg"  minlength='3' required>
               <label class = "formLabel" name = "surnameLabel">Last Name</label>
             </div>
             <div class = "form-outline mb-4">
@@ -49,7 +49,7 @@
               <label class = "formLabel" name = "contactLabel">Phone Number</label>
             </div>
             <div class = "form-outline mb-4">
-              <input type = "password" name = "password" class = "form-control form-control-lg">
+              <input type = "password" name = "password" class = "form-control form-control-lg"  minlength='8' required>
               <label class = "formLabel" name = "passLabel">Password</label>
             </div>
               <div class = "pt-1 mb-4">

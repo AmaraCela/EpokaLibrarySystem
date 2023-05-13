@@ -106,7 +106,7 @@ include "../Model/connection.php";
                echo "<img src = '../assets/images/ProfilePIC.jpg' alt='pfp' id = 'default-pfp'>   "; 
             }
             if(isset($_SESSION['login_user_name'])&&isset($_SESSION['login_user_surname'])){
-              echo $_SESSION['login_user_name']," ",$_SESSION['login_user_surname']; 
+              echo "\t",$_SESSION['login_user_name']," ",$_SESSION['login_user_surname']; 
             }
             else{
               echo"session is not set";
