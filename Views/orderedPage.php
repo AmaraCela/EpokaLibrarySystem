@@ -49,7 +49,7 @@ while ($row = $titles->fetch_assoc())
 <script>
 
     document.querySelectorAll('.order-button').forEach(button=>{
-        button.addEventistener('click',function(event)
+        button.addEventListener('click',function(event)
         {
             event.target.disabled = true;
 
@@ -82,3 +82,6 @@ while ($row = $titles->fetch_assoc())
 
 </div>
 </div>
+<!-- <?php
+require_once "./footer.html";
+?> -->

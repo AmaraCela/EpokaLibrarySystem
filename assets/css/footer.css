@@ -1,7 +1,7 @@
 
 /*------------FOOTER STYLE----------------*/
 .footerDiv{
-  position: absolute;
+  position: relative;
   background-color: #b9bec3;
   width: 100%;
   padding: 20px;

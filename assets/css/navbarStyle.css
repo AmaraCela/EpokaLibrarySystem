@@ -11,8 +11,8 @@
 
 .container-fluid{
     background-color: #01458c;
-    margin-top: 80px;
-    line-height: 67px;
+    margin-top: 60px;
+    line-height: 67px!important;
     position: fixed;
     z-index: 9999999;
     
@@ -21,6 +21,7 @@
 .nav-link{
     color: white;
     margin-right: 17px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
 .navbar-nav .nav-link.active{
@@ -74,9 +75,9 @@
     color: #01458c;
 }
 .dropdown-menu{
-    background-color:rgba(187, 137, 0, 1);
+    background-color:rgba(187, 137, 0, 1)!important;
     display: none;
-    border-radius: 0;
+    border-radius: 0!important;
 }
 
 .dropdown:hover .dropdown-menu{
@@ -86,6 +87,7 @@
 .dropdown-menu.show{
     background-color:rgba(187, 137, 0, 1);
     display: block;
+    
     border-radius: 0; 
 }
 
@@ -126,6 +128,14 @@
         position: fixed;
         margin-top: 0;
         top: 0;
+        line-height: 40px!important;
+    }
+
+    .collapse
+    {
+        margin-left: 0;
     }
 }
 
+
+ 

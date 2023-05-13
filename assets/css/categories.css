@@ -1,3 +1,30 @@
+
+.side-div{
+    background-color: lightgray;
+    display: flex;
+    max-width: 20%;
+    height: 300px;
+    flex-direction: column;
+    padding: 5px;
+
+}
+
+.checkbox-item{
+    display: inline-block;
+    width: 10px;
+}
+.side-label{
+    display: inline;
+    width: 50px;
+}
+
+
+.side-form{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
 .card-img-top{
     max-width: 120px;
     height: 100%;
@@ -9,10 +36,11 @@
     position: relative;
     width: 100%;
     display: flex;
+    top: 80px;
 }
 
 .row{
-    margin-top: 50px;
+    
     width: 100%;
     border-radius: 0%;
     display: flex;
@@ -193,7 +221,7 @@
     background-color: #bbc0ce;
     display: none;
     /* align-items: center; */
-    
+    margin-top: 50px;
     box-shadow: 10px 10px rgb(236, 236, 236);
     flex-direction: column;
     transition: 300ms;
@@ -202,10 +230,9 @@
 }
 
 .wrapper{
-    margin-top: 70px;
+    margin-top: 60px;
     display: flex;
     flex-direction: row;
-
 }
 
 .side-header{
