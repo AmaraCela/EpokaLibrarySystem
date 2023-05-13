@@ -33,9 +33,9 @@ include "../Model/connection.php";
                 </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./StudentHomePage.php">Home</a>
-                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
                     
                     <!-- The categories dropdown -->
                     <li class="nav-item dropdown">
@@ -53,27 +53,7 @@ include "../Model/connection.php";
                                 echo"<li><a class='dropdown-item' href='./categories.php' id='".$row['Genre']."'>".$row['Genre']."</a></li>";
                             }
                             ?>
-                            <script>
-                                let categories = document.querySelectorAll('.dropdown-item');
-
-                                categories.forEach(category => {
-
-                                    category.addEventListener('click',function()
-                                    {
-                                        var genreId = category.id;
-                                        console.log(genreId);
-                                        $.ajax({
-                                            type:'POST',
-                                            url:'../Model/set_genre_id.php',
-                                            data:{genreId:genreId},
-                                            success:function(response)
-                                            {
-                                                console.log(this.response);
-                                            }
-                                        });
-                                    });
-                                });
-                            </script>
+        
                         </ul>
                     </li>
                     <!-- My books dropdown -->
@@ -88,19 +68,10 @@ include "../Model/connection.php";
                     <li class="nav-item"><a class="nav-link" href="./feedback.html" target="_blank">Feedback</a>
                     </li>
                 <li>  
-                <form class="d-flex" role="search" onsubmit="return false">
+                <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
-                <script>
-                    document.getElementsByTagName("form")[0].addEventListener('click',function()
-                    {
-                        var book = document.querySelector("input[type='search']").value;
-                        console.log(book);
-                    });
-                    
-                </script>
-
                 </li>
                     <!-- Profile dropdown -->
                     <li class="nav-item dropdown">
@@ -109,13 +80,14 @@ include "../Model/connection.php";
             if($_SESSION['pic']!=""){
               echo "<img src='data:image/jpeg;base64,".base64_encode($_SESSION['pic'])."'class = 'img-circle profile-img' height=40 width=40>";
             }
-            echo " ";
-            if(isset($_SESSION['login_user_name'], $_SESSION['login_user_surname'])){
+            else{
+               echo "<img src = '../assets/images/ProfilePIC.jpg' alt='pfp' id = 'default-pfp'>   "; 
+            }
+            if(isset($_SESSION['login_user_name'])&&isset($_SESSION['login_user_surname'])){
               echo $_SESSION['login_user_name']," ",$_SESSION['login_user_surname']; 
             }
             else{
-              echo"";
-              // echo"session is not set";
+              echo"session is not set";
             }
             ?>
           </a>
@@ -128,15 +100,6 @@ include "../Model/connection.php";
         </div>
         </div>
     </nav>
-    <script>
-        document.getElementsByClassName("navbar-toggler")[0].addEventListener('click',function()
-        {
-              
-               console.log(document.getElementById("navbarSupportedContent").classList);
-               console.log(document.getElementById("navbarSupportedContent").classList.contains("show"));
-
-        });
-        </script>
     </header>
 </body>
 </html>

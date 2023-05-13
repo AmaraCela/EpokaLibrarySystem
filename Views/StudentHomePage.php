@@ -25,50 +25,52 @@ require_once "./navbar.php";
         <li class ='buttons-li'><button title='Order book' id='".$row['BookId']."' class='btn btn-primary order-button'> Order</a></li>
       <li class ='buttons-li'>
       <button title='Save book' class ='btn btn-primary favorite-button' ><img id='".$row['BookId']."' src='../assets/images/favorite.png' style='width:25px'></button></li>
-
+        
         </ul>
         </div>
         </div>
         </div>
         ";  
       }
+
       $db->close();
 ?>
+
+
       <!-- //Adding functionality to the ordered button -->
     
 <script src="../Controller/orderScript.js"></script>
 <script src='../Controller/favoriteScript.js'></script>
 <script>
 document.querySelectorAll('.more-button').forEach(button => {
-  button.addEventListener('click', function(event) {
-    console.log(event.target.id);
-    var bookId = event.target.id;
-    var req = new XMLHttpRequest();
+  button.addEventListener('click', function() {
+    console.log( button.id);
+    var bookId = button.id;
+    // button.disabled =true;
+    
     $.ajax({
       type: 'POST',
       url: '../Model/set_book_id.php',
       data: {bookId: bookId},
-      success: function(response) {
-        
+      success: function() {
+
       
-      req.open('GET','../Model/get_book_info.php',true);
-      req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
+        var req = new XMLHttpRequest();
+            req.open('GET','../Model/get_book_info.php',true);
+            console.log("<?php echo $_SESSION['bookId']?>");
             req.onreadystatechange = function() {
-            
-              if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-                // Do something with the response if necessary
-              <?php 
-            echo"
-            document.getElementById('side-p').innerText = '{$_SESSION['Title']}'+'{$_SESSION['Author']}'+'{$_SESSION['Description']}'";
-            ?>
-
-                document.getElementsByClassName('side-panel')[0].style.display = 'block';
+              
+              if (this.readyState == 4 && this.status == 200) {
                 console.log(this.responseText);
+                let info = JSON.parse(this.responseText);
+
+                document.getElementById('side-p').innerHTML = "<b>Title: " +info['title'] +'<br>Author: '+ info['author']+"</b><br>"+info['description'];
+                document.getElementsByClassName('side-panel')[0].style.transition = '600ms';
+                document.getElementsByClassName('side-panel')[0].style.display = 'block';
               }
             };
             req.send();
-
+            
       }
     });
    

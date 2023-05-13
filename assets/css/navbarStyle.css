@@ -11,6 +11,11 @@
     color: white!important;
 }
 
+#default-pfp
+{
+  height: 40px;
+  width: 40px;
+}
 .btn.btn-outline-success:hover{
   background-color: white;
   color: #01458c;

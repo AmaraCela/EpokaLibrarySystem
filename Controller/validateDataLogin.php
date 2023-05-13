@@ -1,4 +1,5 @@
 <?php
+
 include "../Model/connection.php";
 ?>
 <?php 
@@ -21,6 +22,7 @@ include "../Model/connection.php";
           $_SESSION['login_user_name'] = $row['Name'];
           $_SESSION['login_user_surname'] = $row['Surname'];
           $_SESSION['pic'] = $row['Pic'];
+          
           //echo "<img src='data:image/png;base64,";
           //base64_encode($row['Pic']);
         ?>
