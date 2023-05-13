@@ -7,6 +7,7 @@ if (isset($_POST['signUp'])) {
   $count = 0;
   $sql = "SELECT Email FROM student";
   $mysqlRes = mysqli_query($db, $sql);
+  //adding code
   while($row = mysqli_fetch_assoc($mysqlRes)){
     if($row['Email']==$_POST['email']){
       $count++;

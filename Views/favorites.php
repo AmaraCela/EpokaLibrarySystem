@@ -58,8 +58,6 @@ $individualStyle = "../assets/css/favorite.css";
           </li>
           <li class='buttons-li'>
           <button class ='btn btn-primary unfavorite-button'><img src='../assets/images/favorite.png' id='".$row['BookId']."' style='width:25px'></button>";
-          // $_SESSION['cnt'] = $cnt;
-          // $cnt++;
           echo"</li>
           </ul>
           </div>
@@ -81,8 +79,9 @@ $individualStyle = "../assets/css/favorite.css";
         data:{bookId:bookId},
         success:function(response){
           request.open('POST','../Model/deleteFavorite.php',true);
+
           request.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-          request.onreadyStateChange = function(){
+          request.onreadystatechange = function(){
             if(this.readyState === 4 && this.status === 200){
               window.location = './favorites.php';
             }
