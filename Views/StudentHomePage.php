@@ -37,6 +37,8 @@ require_once "./navbar.php";
 ?>
 
 
+
+
       <!-- //Adding functionality to the ordered button -->
     
 <script src="../Controller/orderScript.js"></script>

@@ -4,4 +4,5 @@ if(isset($_POST['bookId']))
 {
     $_SESSION['bookId'] = $_POST['bookId'];
 }
+echo $_SESSION['bookId'];
 ?>

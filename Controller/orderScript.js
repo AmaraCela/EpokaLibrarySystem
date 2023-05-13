@@ -2,10 +2,10 @@ document.querySelectorAll('.order-button').forEach(
     button=>{
         button.addEventListener('click',function(event)
         {
-                event.target.disabled = true;
+                button.disabled = true;
                 
                 //The Id of the clicked element
-                var bookId = event.target.id;
+                var bookId = button.id;
 
                 $.ajax(
                     {
@@ -39,3 +39,20 @@ document.querySelectorAll('.order-button').forEach(
         });
     }
 );
+
+  let req =new XMLHttpRequest();
+
+  req.open("GET","../Controller/validateOrdered.php",true);
+  
+  req.onreadystatechange =function()
+  {
+    if(req.status ==200 &&req.readyState==4)
+    {
+      var array =JSON.parse(req.response);
+      for(let i=0;i<array.length;i++)
+      {
+        document.querySelector("button[title='Order book'][id='"+array[i]+"']").disabled = true;
+      }
+    }
+  }
+  req.send();
