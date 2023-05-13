@@ -19,11 +19,17 @@ require_once "./navbar.php";
         <h6 class='card-title'>".$row['Title']."</h6>
         <p class='card-text'><b>Author: </b>".$row['Author']."<br>
         <b>Genre: </b>".$row['Genre']."<br>
+        <h6 class='card-title'>".$row['Title']."</h6>
+        <p class='card-text'><b>Author: </b>".$row['Author']."<br>
+        <b>Genre: </b>".$row['Genre']."<br>
         </p>
         <ul class='buttons-ul'>
         <li class ='buttons-li'><button title='Press for more' id='".$row['BookId']."' class='btn btn-primary more-button'> More</a></li>
         <li class ='buttons-li'><button title='Order book' id='".$row['BookId']."' class='btn btn-primary order-button'> Order</a></li>
+        <li class ='buttons-li'><button title='Press for more' id='".$row['BookId']."' class='btn btn-primary more-button'> More</a></li>
+        <li class ='buttons-li'><button title='Order book' id='".$row['BookId']."' class='btn btn-primary order-button'> Order</a></li>
       <li class ='buttons-li'>
+      <button title='Save book' class ='btn btn-primary favorite-button' ><img id='".$row['BookId']."' src='../assets/images/favorite.png' style='width:25px'></button></li>
       <button title='Save book' class ='btn btn-primary favorite-button' ><img id='".$row['BookId']."' src='../assets/images/favorite.png' style='width:25px'></button></li>
 
         </ul>
@@ -93,6 +99,8 @@ document.querySelectorAll('.more-button').forEach(button => {
     }
 </script>
 </div>
+<?php
+require_once "./footer.html"?>
 <?php
 require_once "./footer.html"?>
 <?php require_once 'footer.html'?>

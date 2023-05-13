@@ -1,0 +1,262 @@
+
+.side-div{
+    background-color: lightgray;
+    display: flex;
+    max-width: 20%;
+    height: 300px;
+    flex-direction: column;
+    padding: 5px;
+
+}
+
+.checkbox-item{
+    display: inline-block;
+    width: 10px;
+}
+.side-label{
+    display: inline;
+    width: 50px;
+}
+
+
+.side-form{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.card-img-top{
+    max-width: 120px;
+    height: 100%;
+    align-self: center;
+}
+
+.container{
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    display: flex;
+    top: 80px;
+}
+
+.row{
+    
+    width: 100%;
+    border-radius: 0%;
+    display: flex;
+    
+}
+
+.buttons-li{
+    list-style: none;
+    display: inline;
+}
+.buttons-ul{
+    offset-distance: 0px;
+    padding-left: 0px;
+}
+
+.card
+{
+    display: flex;
+    margin-left: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    align-items: center;
+    width: 10px;
+    max-height: 200px;
+    flex: 1 0 25%;
+    border-radius: 0%!important;
+    border-color: #01458c;
+    flex-direction: row!important;
+    height: 200px;
+
+}
+.card-title, .card-text{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.btn.btn-primary
+{
+    background-color:#01458c;
+    margin-left: 0%;
+    margin-right: 0px;
+    margin-top: 5px;
+    
+    
+}
+
+.col-sm-4 {
+    display: flex;
+    /* here */
+
+    flex: 1 0 25%;
+    max-width: 40%;
+    height: 200px;
+    margin-bottom: 10px;
+
+    
+}
+
+.card-title{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.card-text{
+    font-size: 12px;
+}
+
+.card-body{
+    padding: 10px 0 10px 10px!important;
+    background-color:#bbc0ce;
+    height: 100%;
+}
+
+.card:hover{
+    box-shadow: 10px 10px rgb(236, 236, 236);
+    cursor: pointer;
+    transition: 200ms;
+}
+
+@media screen and (max-width:772px){
+    .col-sm-4 {
+        display: flex;
+        /* here */
+        flex: 1 0 50%!important;
+        /* max-width: 25%;
+        min-width: 20%;   */
+        width: 30%;
+    }   
+}
+
+@media screen and (max-width:320px)
+{
+    .btn-primary, .btn{
+        max-height: 70%;
+        line-height: 10px!important;
+        font-size: 12px!important;
+        
+       
+    }
+    .buttons-ul
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .buttons-li{
+        align-self: center;
+    }
+    .card{
+        margin:10px;
+    }
+    .col-sm-4:first-child{
+        margin-top: 60px;
+    }
+
+    .col-sm-4 {
+        display: flex;
+        flex: 0 0 100%!important;
+        max-width: 25%;
+        min-width: 20%;  
+    }   
+    
+
+}
+
+@media screen and (max-width:990px){
+    .navbar-brand-img{
+        height: 50px;
+        width: 40px;
+    }
+    .card{
+        flex-direction: column!important;
+        /* max-height: 400px; */
+        height: fit-content;
+    }
+
+    .card-body{
+        width: 100%;
+        height: 100%;
+    }
+    .card-img-top{
+        max-height: 200px;
+    }
+
+    .col-sm-4{
+        flex: 0 0 33.3%;
+        height: 400px;
+    }
+    .container{
+        margin: 0;
+        padding: 0;
+        align-items: center;
+        justify-content:flex-end;
+    }
+}
+.mb-3 {
+    margin-bottom: 10px!important;
+}
+@media screen and (min-width: 576px)
+{
+
+    .container{
+    max-width: 100%;}
+}
+
+
+/* ----------------------------------side panel style--------------------------------- */
+
+.side-panel{
+    /* height: 100%; */
+    position:relative;
+    width:20%;
+    background-color: #bbc0ce;
+    display: none;
+    /* align-items: center; */
+    margin-top: 50px;
+    box-shadow: 10px 10px rgb(236, 236, 236);
+    flex-direction: column;
+    transition: 300ms;
+    
+
+}
+
+.wrapper{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+}
+
+.side-header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+}
+
+.cancel-Side{
+    box-shadow: none;
+    background-color: #01458c;
+    width: 0;
+    /* margin-right: 500px; */
+}
+
+.remove-img{
+    width: 0;
+}
+
+.side-p{
+    width: 0;
+}
+.side-img{
+    /* max-width: 40%; */
+    max-height: 40%;
+    width: 100px;
+}

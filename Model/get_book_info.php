@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "../Model/connection.php";
-        $queryy = "SELECT * FROM `books` WHERE `BookId` = {$_SESSION['bookId']}";
+        $queryy = "SELECT * FROM `books` WHERE `BookId` = '{$_SESSION['bookId']}'";
         
         $book1 = $db->query($queryy);
         
@@ -11,5 +11,5 @@ include "../Model/connection.php";
           $_SESSION['Genre'] = $row['Genre'];
           $_SESSION['Description'] = $row['Description'];
         }
-$db->close();      
+$db->close();
 ?>

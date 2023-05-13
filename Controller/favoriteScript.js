@@ -4,8 +4,8 @@ document.querySelectorAll('.favorite-button').forEach(button => {
       
       // event.target.disabled = true;
       // get the ID of the clicked element
-    var bookId = event.target.id;
-    console.log(bookId);
+    let bookId = event.target.id;
+    
   // make an AJAX POST request to a PHP script
   $.ajax({
     type: 'POST',
@@ -16,7 +16,7 @@ document.querySelectorAll('.favorite-button').forEach(button => {
     }
   });
       // Send a request to the PHP script
-      var xhr = new XMLHttpRequest();
+      let xhr = new XMLHttpRequest();
       xhr.open('POST', '../Model/favoriteQuery.php', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.onreadystatechange = function() {

@@ -1,7 +1,7 @@
 <?php 
 include "../Model/connection.php";
 $title = "Categories";
-$individualStyle = "assets/css/StudentHomePageStyle.css";
+$individualStyle = "../assets/css/categories.css";
 require_once "./navbar.php"
 ?>
 
@@ -22,33 +22,14 @@ require_once "./navbar.php"
             
         }
         ?>
-        <!-- <script>
-            document.querySelectorAll('.checkbox-item').forEach(input=>
-            {
-            let array = [];
-            input.addEventListener('change',function(event){
-            if(this.checked){
-            array.push(event.target.value);}
-            else{
-            array.pop(event.target.value);
-            }
-            });
-            $.ajax({
-            type: 'POST',
-             url: '../Model/setGenreArray.php',
-            data: { genreId: array },
-            success: function(response) {
-            }
-        });
-        }
-        );
-        </script> -->
+        <button id='choose'>Choose</button>
+
         </form>
     </div>
         <div class="row">
         <?php
          $sql = "SELECT * FROM `books` 
-         WHERE `Genre` = (SELECT `Genre` FROM `books` where `BookId`= {$_SESSION['genreId']})";
+         WHERE `Genre` =  '{$_SESSION['genreId']}'";
          $titles = $db->query($sql);
          while($row = $titles->fetch_assoc())
          {
@@ -57,9 +38,9 @@ require_once "./navbar.php"
             <div class='card' style='width: 18rem;'>
             <img src='data:image/png;base64," . base64_encode($row['Image']) . "' class='card-img-top' alt='photo' style='width: 150px; height: 200px;'>
             <div class='card-body'>
-            <h6 class='card-title'>".$row["Title"]."</h6>
-            <p class='card-text'>Author:".$row["Author"]."<br>
-            Genre:".$row["Genre"]."<br>
+            <h6 class='card-title'>".$row['Title']."</h6>
+            <p class='card-text'>Author:".$row['Author']."<br>
+            Genre:".$row['Genre']."<br>
             <ul class='buttons-ul'>
             <li class='buttons-li'>
             <button class='btn btn-primary'>More</button>

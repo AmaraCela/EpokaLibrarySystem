@@ -89,5 +89,8 @@ while ($row = $titles->fetch_assoc())
 
 </div>
 </div>
+<!-- <?php
+require_once "./footer.html";
+?> -->
   </body>
 </html>

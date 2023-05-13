@@ -5,7 +5,7 @@
 }
 
 body{
-    display: flex;
+    display: block;
 }
 .container{
     display: flex;
