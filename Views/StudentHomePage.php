@@ -104,4 +104,3 @@ document.querySelectorAll('.more-button').forEach(button => {
 </div>
 <?php
 require_once "./footer.html"?>
-<?php require_once 'footer.html'?>

@@ -2,10 +2,10 @@
 session_start();
 require "./connection.php";
 
-if(isset($_POST['genreId']))
+if(isset($_POST['genre']))
 {
-    $_SESSION['genreId'] = $_POST['genreId'];
+    $_SESSION['genre'] = $_POST['genre'];
 
 }
-
+echo  $_SESSION['genre'];
 ?>

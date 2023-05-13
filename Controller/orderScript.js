@@ -7,6 +7,8 @@ document.querySelectorAll('.order-button').forEach(
                 //The Id of the clicked element
                 var bookId = button.id;
 
+                
+
                 $.ajax(
                     {
                         type:'POST',
@@ -51,6 +53,8 @@ document.querySelectorAll('.order-button').forEach(
       var array =JSON.parse(req.response);
       for(let i=0;i<array.length;i++)
       {
+        
+        console.log(document.querySelector("button[title='Order book'][id='"+array[i]+"']"));
         document.querySelector("button[title='Order book'][id='"+array[i]+"']").disabled = true;
       }
     }

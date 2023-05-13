@@ -50,9 +50,30 @@ include "../Model/connection.php";
                             //The results of the execution of the query are fetched one row by one
                             while($row=$genres->fetch_assoc())
                             {
-                                echo"<li><a class='dropdown-item' href='./categories.php' id='".$row['Genre']."'>".$row['Genre']."</a></li>";
+                                echo"<li><a class='dropdown-item' href='./categories.php' onclick = 'return getGenre(this)' id='".$row['Genre']."'>".$row['Genre']."</a></li>";
                             }
                             ?>
+                            <script>
+                                function getGenre(a)
+                                {
+                                    console.log(a);
+                                    window.stop();
+                                    var genre = a.id;
+                                    $.ajax({
+                                        type : "POST",
+                                        url:"../Model/set_genre_id.php",
+                                        data:{genre:genre},
+                                        success:function(response)
+                                        {
+                                            console.log(response);
+                                            window.location = '../Views/categories.php';
+                                        }
+                                        
+                                    });
+                                    
+                                   return false; 
+                                }
+                            </script>
         
                         </ul>
                     </li>
@@ -68,10 +89,11 @@ include "../Model/connection.php";
                     <li class="nav-item"><a class="nav-link" href="./feedback.html" target="_blank">Feedback</a>
                     </li>
                 <li>  
-                <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="d-flex" role="search" onsubmit="return false">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id ="search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
+                <script src='../Controller/searchScript.js'></script>
                 </li>
                     <!-- Profile dropdown -->
                     <li class="nav-item dropdown">

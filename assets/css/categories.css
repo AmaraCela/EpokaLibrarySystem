@@ -3,7 +3,6 @@
     background-color: lightgray;
     display: flex;
     max-width: 20%;
-    height: 300px;
     flex-direction: column;
     padding: 5px;
 
@@ -15,7 +14,7 @@
 }
 .side-label{
     display: inline;
-    width: 50px;
+    width: 10%;
 }
 
 
@@ -26,7 +25,7 @@
 }
 
 .card-img-top{
-    max-width: 120px;
+    max-width: 40%;
     height: 100%;
     align-self: center;
 }
@@ -37,14 +36,21 @@
     width: 100%;
     display: flex;
     top: 80px;
+    justify-content: space-between;
+    margin-bottom: 50px;
 }
-
+footer{
+    margin-top: 100px;
+}
 .row{
     
-    width: 100%;
     border-radius: 0%;
     display: flex;
-    
+    width: 700px;
+    flex-wrap: wrap;
+    flex: 1 1 50%;
+    margin-left: 20px!important;
+    position: relative;
 }
 
 .buttons-li{

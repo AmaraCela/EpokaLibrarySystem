@@ -54,7 +54,7 @@ $individualStyle = "../assets/css/favorite.css";
           <a href='#' class='btn btn-primary' '>Read more</a>
           </li>
           <li class='buttons-li'>
-          <button class ='btn btn-primary unorder-button'>Unorder</button>
+          <button title ='Order book' class ='btn btn-primary order-button' id='".$row['BookId']."'>Order</button>
           </li>
           <li class='buttons-li'>
           <button class ='btn btn-primary unfavorite-button'><img src='../assets/images/favorite.png' id='".$row['BookId']."' style='width:25px'></button>";
@@ -67,6 +67,9 @@ $individualStyle = "../assets/css/favorite.css";
       </div>";
     }
     ?>
+    <script src="../Controller/orderScript.js">
+
+    </script>
 <script>
   document.querySelectorAll('.unfavorite-button').forEach(button=>{
     button.addEventListener('click',function(event){
@@ -95,6 +98,6 @@ $individualStyle = "../assets/css/favorite.css";
 </script>
   </div>
 </div>
-<!-- <?php include "footer.html"?> -->
+<?php include "./footer.html"?>
   </body>
 </html>
