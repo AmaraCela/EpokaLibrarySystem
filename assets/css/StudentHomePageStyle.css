@@ -195,26 +195,18 @@
 /* ----------------------------------side panel style--------------------------------- */
 
 .side-panel{
-    /* height: 100%; */
-    position:relative;
-    width:20%;
-    background-color: #bbc0ce;
-    display: none;
-    /* align-items: center; */
-    
-    box-shadow: 10px 10px rgb(236, 236, 236);
-    flex-direction: column;
-    transition: 300ms;
-    
+  /* height: 100%; */
+  position:relative;
+  width:20%;
+  background-color: #bbc0ce;
+  display: none;
+  box-shadow: 10px 10px rgb(236, 236, 236);
+  flex-direction: column;
+  
 
 }
 
-.wrapper{
-    margin-top: 70px;
-    display: flex;
-    flex-direction: row;
 
-}
 
 .side-header{
   display: flex;

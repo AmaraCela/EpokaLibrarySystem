@@ -19,57 +19,58 @@ require_once "./navbar.php";
         <h6 class='card-title'>".$row['Title']."</h6>
         <p class='card-text'><b>Author: </b>".$row['Author']."<br>
         <b>Genre: </b>".$row['Genre']."<br>
-        <h6 class='card-title'>".$row['Title']."</h6>
-        <p class='card-text'><b>Author: </b>".$row['Author']."<br>
-        <b>Genre: </b>".$row['Genre']."<br>
         </p>
         <ul class='buttons-ul'>
         <li class ='buttons-li'><button title='Press for more' id='".$row['BookId']."' class='btn btn-primary more-button'> More</a></li>
         <li class ='buttons-li'><button title='Order book' id='".$row['BookId']."' class='btn btn-primary order-button'> Order</a></li>
-        <li class ='buttons-li'><button title='Press for more' id='".$row['BookId']."' class='btn btn-primary more-button'> More</a></li>
-        <li class ='buttons-li'><button title='Order book' id='".$row['BookId']."' class='btn btn-primary order-button'> Order</a></li>
       <li class ='buttons-li'>
       <button title='Save book' class ='btn btn-primary favorite-button' ><img id='".$row['BookId']."' src='../assets/images/favorite.png' style='width:25px'></button></li>
-      <button title='Save book' class ='btn btn-primary favorite-button' ><img id='".$row['BookId']."' src='../assets/images/favorite.png' style='width:25px'></button></li>
-
+        
         </ul>
         </div>
         </div>
         </div>
         ";  
       }
+
       $db->close();
 ?>
+
+
       <!-- //Adding functionality to the ordered button -->
     
 <script src="../Controller/orderScript.js"></script>
 <script src='../Controller/favoriteScript.js'></script>
 <script>
 document.querySelectorAll('.more-button').forEach(button => {
-  button.addEventListener('click', function(event) {
-    console.log(event.target.id);
-    var id = event.target.id;
+  button.addEventListener('click', function() {
+    console.log( button.id);
+    var bookId = button.id;
+    // button.disabled =true;
+    
     $.ajax({
       type: 'POST',
-      url: '../Model/set_book_id_for_more.php',
-      data: {id:id},
-      success: function(response) {
-        console.log(response);
+      url: '../Model/set_book_id.php',
+      data: {bookId: bookId},
+      success: function() {
 
+      
         var req = new XMLHttpRequest();
-            req.open('GET','../Model/get_book_info.php?response='+response,true);
-            
+            req.open('GET','../Model/get_book_info.php',true);
+            console.log("<?php echo $_SESSION['bookId']?>");
             req.onreadystatechange = function() {
               
-            
               if (this.readyState == 4 && this.status == 200) {
-                document.getElementById('side-p').innerHTML = "<b>Title: <?php echo $_SESSION['Title'].'</b> <br> <b>Author: '.$_SESSION['Author'].'</b> <br>'.$_SESSION['Description'];?>";
-                
+                console.log(this.responseText);
+                let info = JSON.parse(this.responseText);
+
+                document.getElementById('side-p').innerHTML = "<b>Title: " +info['title'] +'<br>Author: '+ info['author']+"</b><br>"+info['description'];
                 document.getElementsByClassName('side-panel')[0].style.transition = '600ms';
                 document.getElementsByClassName('side-panel')[0].style.display = 'block';
               }
             };
             req.send();
+            
       }
     });
    
@@ -99,8 +100,6 @@ document.querySelectorAll('.more-button').forEach(button => {
     }
 </script>
 </div>
-<?php
-require_once "./footer.html"?>
 <?php
 require_once "./footer.html"?>
 <?php require_once 'footer.html'?>
