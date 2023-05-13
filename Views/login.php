@@ -1,8 +1,8 @@
 <?php
 session_start();
 include "../Model/connection.php";
+// $individualStyle = '../assets/css/login.css';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

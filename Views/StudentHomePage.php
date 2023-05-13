@@ -23,7 +23,7 @@ require_once "./navbar.php";
         <li class ='buttons-li'><button title='Press for more' id='".$row["BookId"]."' class='btn btn-primary more-button'> More</a></li>
         <li class ='buttons-li'><button title='Order book' id='".$row["BookId"]."' class='btn btn-primary order-button'> Order</a></li>
       <li class ='buttons-li'>
-      <button title='Save book' class ='btn btn-primary favorite-button' id='".$row["BookId"]."><img src='../assets/images/favorite.png' style='width:25px'></button></li>
+      <button title='Save book' class ='btn btn-primary favorite-button'><img src='../assets/images/favorite.png' id='".$row["BookId"]."' style='width:25px'></button></li>
 
         </ul>
         </div>
@@ -94,8 +94,8 @@ document.querySelectorAll('.more-button').forEach(button => {
 <script>
     function cancelSide()
     {
-       document.getElementsByClassName("side-panel")[0].style.display = "none";
+      document.getElementsByClassName("side-panel")[0].style.display = "none";
     }
 </script>
 </div>
-<!-- <?php readfile('./footer.html');?> -->
+<?php require_once 'footer.html'?>
