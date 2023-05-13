@@ -54,10 +54,12 @@ $individualStyle = "../assets/css/favorite.css";
           <a href='#' class='btn btn-primary' '>Read more</a>
           </li>
           <li class='buttons-li'>
-          <button title ='Order book' class ='btn btn-primary order-button' id='".$row['BookId']."'>Order</button>
+          <button class ='btn btn-primary unorder-button'>Unorder</button>
           </li>
           <li class='buttons-li'>
           <button class ='btn btn-primary unfavorite-button'><img src='../assets/images/favorite.png' id='".$row['BookId']."' style='width:25px'></button>";
+          // $_SESSION['cnt'] = $cnt;
+          // $cnt++;
           echo"</li>
           </ul>
           </div>
@@ -65,9 +67,6 @@ $individualStyle = "../assets/css/favorite.css";
       </div>";
     }
     ?>
-    <script src="../Controller/orderScript.js">
-
-    </script>
 <script>
   document.querySelectorAll('.unfavorite-button').forEach(button=>{
     button.addEventListener('click',function(event){
@@ -82,9 +81,8 @@ $individualStyle = "../assets/css/favorite.css";
         data:{bookId:bookId},
         success:function(response){
           request.open('POST','../Model/deleteFavorite.php',true);
-
           request.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-          request.onreadystatechange = function(){
+          request.onreadyStateChange = function(){
             if(this.readyState === 4 && this.status === 200){
               window.location = './favorites.php';
             }
@@ -97,6 +95,6 @@ $individualStyle = "../assets/css/favorite.css";
 </script>
   </div>
 </div>
-<?php include "./footer.html"?>
+<!-- <?php include "footer.html"?> -->
   </body>
 </html>
