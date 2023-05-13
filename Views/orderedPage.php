@@ -1,11 +1,11 @@
 <?php
 $title = "Ordered";
-$individualStyle = "../assets/css/StudentHomePageStyle.css";
+$individualStyle = "../assets/css/orderedStyle.css";
 require_once "./navbar.php";
 ?>
 
 <div class="container">
-<div>
+
 <?php
 $query = "SELECT b.BookId,b.Title,b.Author,b.Genre,b.Image,b.Description,o.DateOrdered
 FROM books b, ordered o
@@ -23,7 +23,7 @@ while ($row = $titles->fetch_assoc())
     echo"
     <div class='col-sm-4 mb-3 mb-sm-0'>
     <div class='card' style='width: 18rem;'>
-    <img src='data:image/png;base64," . base64_encode($row['Image']) . "' class='card-img-top' alt='photo' style='width: 150px; height: 200px;'>
+    <img src='data:image/png;base64," . base64_encode($row['Image']) . "' class='card-img-top' alt='photo'>
     <div class='card-body'>
     <h6 class='card-title'>".$row["Title"]."</h6>
     <p class='card-text'>Author:".$row["Author"]."<br>
@@ -49,7 +49,7 @@ while ($row = $titles->fetch_assoc())
 <script>
 
     document.querySelectorAll('.order-button').forEach(button=>{
-        button.addEventListener('click',function(event)
+        button.addEventistener('click',function(event)
         {
             event.target.disabled = true;
 

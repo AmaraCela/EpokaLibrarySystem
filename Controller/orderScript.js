@@ -1,5 +1,5 @@
 document.querySelectorAll('.order-button').forEach(
-    (button)=>{
+    button=>{
         button.addEventListener('click',function(event)
         {
                 event.target.disabled = true;

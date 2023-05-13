@@ -1,0 +1,94 @@
+.no-orders{
+    position: relative;
+    z-index: 1;
+    top: 100px;
+}
+
+body{
+    display: flex;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    top: 100px;
+    width: 100%;
+    /* margin: 0;
+    padding: 0; */
+    flex-wrap: wrap;
+}
+.card{
+    flex:1 0 50%;
+    flex-direction: row;
+    position: relative;
+    /* align-items: center; */
+    width: 10px;
+    max-height: 200px;
+    border-color: #01458c;
+}
+.card-img-top{
+    width: 150px; height: 200px;
+}
+.btn.btn-primary
+{
+    background-color:#01458c;
+    margin-left: 0%;
+    margin-right: 0px;
+    margin-top: 5px;
+    
+}
+
+.col-sm-4{
+    display: flex;
+    flex: 1 0 45%!important;
+    margin-left: 0px;
+    margin-right: 20px;
+    padding-right: 0px;
+    padding-left: 0px;
+    position: relative;
+    margin-bottom: 20px!important;
+
+}
+
+.card-title{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.card-text{
+    font-size: 12px;
+}
+
+.card-body{
+    padding: 10px 0 10px 10px!important;
+    background-color:#bbc0ce;
+    height: 100%;
+}
+
+.buttons-ul{
+    offset-distance: 0px;
+    margin-left: 0px;
+}
+.buttons-li{
+    text-decoration: none;
+    display: inline;
+    margin-left: 0px;
+    margin-right: 3px;
+    margin-top: 5px;
+}
+.card:hover{
+    box-shadow: 10px 10px rgb(236, 236, 236);
+    cursor: pointer;
+    transition: 200ms;
+}
+
+@media screen and (max-width:1000px)
+{
+    .card{
+        max-height: 300px;
+    }
+    .card-img-top{
+        height: 100%;
+    }
+}
