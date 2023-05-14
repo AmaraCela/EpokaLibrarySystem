@@ -1,0 +1,50 @@
+.image{
+  /* width: 300px;
+  height: 400px; */
+  font-family:'Mukta',sans-serif;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.image:hover{
+  transform: scale(1.1); /* increase the image size by 10% */
+  transition: transform 0.03s ease-out; /* add a smooth transition effect */
+  filter: brightness(80%) contrast(80%);
+  /* display: inline-block; */
+}
+.Title{
+  max-width: 50%;
+  margin-top: 10%;
+}
+.card{
+  margin-top: 10%;
+  margin-bottom: 10%;
+  border-radius: 10px;
+  max-height: 700px;
+  /* border: 0.1px; */
+}
+.container{
+  display: flex;
+  justify-content:space-around;
+  /* align-items: center; */
+  flex-direction: row;
+}
+
+
+/* use a media query to apply styles only for viewports with a width less than or equal to 768px */
+@media (max-width: 70px) {
+  /*.container {
+    flex-direction: column; /* change the flex direction to column 
+    align-items: stretch; stretch the items to fill the container vertically
+  }*/
+  .container{
+    display: flex;
+    justify-content:center;
+    align-items: stretch;
+    /* align-items: center; */
+    flex-direction: column;
+  }
+  
+  .Title {
+    max-width: 100%; /* make the title take up the full width of its container */
+  }
+}

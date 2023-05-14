@@ -1,10 +1,15 @@
 <?php
 $title = "Home";
-$individualStyle = "../assets/css/StudentHomePageStyle.css";
+// $individualStyle = "../assets/css/StudentHomePageStyle.css";
 require_once "./navbar.php";
-
 ?>
-<div class = "wrapper">
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../assets/css/StudentHomePageStyle.css">
+  </head>
+  <body>
+  <div class = "wrapper">
 <div class ="container">
   <div class = "row">
     <?php
@@ -104,3 +109,6 @@ document.querySelectorAll('.more-button').forEach(button => {
 </div>
 <?php
 require_once "./footer.html"?>
+
+  </body>
+</html>

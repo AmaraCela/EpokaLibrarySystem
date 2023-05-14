@@ -32,7 +32,7 @@
 {
   display: flex;
   margin-left: 0px;
-  margin-top: 20%;
+  margin-top: 30%;
   padding-top: 0px;
   margin-bottom: 10px;
   position: relative;
@@ -70,7 +70,7 @@
 /* 
   flex: 1 0 25%; */
   /* max-width: 40%; */
-  height: 200px;
+  /* height: 200px; */
   margin-bottom: 10px;
 }
 
@@ -150,7 +150,8 @@
   }
   .card{
       flex-direction: column!important;
-      /* max-height: 400px; */
+      margin-top:50%;
+      max-height: 400px;
       height: fit-content;
   }
 
@@ -183,7 +184,6 @@
   max-width: 100%;}
 } 
 
-
 .card-body > .card-content {
   padding: 10px;
   display: none;
@@ -196,4 +196,3 @@
   width: 350px;
   height: 300px;
 }
-

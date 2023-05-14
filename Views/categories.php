@@ -1,13 +1,14 @@
 <?php 
 include "../Model/connection.php";
 $title = "Categories";
-$individualStyle = "../assets/css/categories.css";
+// $individualStyle = "../assets/css/categories.css";
 ?>
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
   <head>
     <?php
     require_once "./navbar.php"?>
+    <link rel = "stylesheet" href="../assets/css/categories.css">
   </head>
   <body>
 <div class="container">

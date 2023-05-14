@@ -19,7 +19,7 @@ include "../Model/connection.php";
   rel="stylesheet">
     <link rel="icon" href="../assets/images/epokaLogo.png">
     <link rel="stylesheet" href = "../assets/css/navbarStyle.css" type="text/css">
-    <?php echo"<link rel='stylesheet'href='".$individualStyle."'>";?>
+    <!-- <?php echo"<link rel='stylesheet'href='".$individualStyle."'>";?> -->
     <title><?php echo $title?></title>
 </head>
 <body>

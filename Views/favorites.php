@@ -3,7 +3,8 @@ include "../Model/connection.php";
 ?> -->
 <?php
 $title = "favorites";
-$individualStyle = "../assets/css/favorite.css";
+require_once './navbar.php'
+// $individualStyle = "../assets/css/favorite.css";
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,6 +12,7 @@ $individualStyle = "../assets/css/favorite.css";
   <meta charset = "UTF-8">
   <meta http-equiv = "X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel = "stylesheet" href="../assets/css/favorite.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://kit.fontawesome.com/9cfc78147e.js" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -20,8 +22,9 @@ $individualStyle = "../assets/css/favorite.css";
   rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </head>
+
   <body>
-    <?php require_once './navbar.php';?>  
+    
   <div class = "container"> 
   <div class="row">
     <?php 
@@ -51,15 +54,13 @@ $individualStyle = "../assets/css/favorite.css";
         <?php
           echo"<ul class='buttons-ul'>
               <li class='buttons-li'>
-          <a href='#' class='btn btn-primary' '>Read more</a>
+          <a href='#' class='btn btn-primary more-button' id = '".$row['Title']."'>Read more</a>
           </li>
-          <li class='buttons-li'>
+          <!--<li class='buttons-li'>
           <button class ='btn btn-primary unorder-button'>Unorder</button>
-          </li>
+          </li>-->
           <li class='buttons-li'>
           <button class ='btn btn-primary unfavorite-button'><img src='../assets/images/favorite.png' id='".$row['BookId']."' style='width:25px'></button>";
-          // $_SESSION['cnt'] = $cnt;
-          // $cnt++;
           echo"</li>
           </ul>
           </div>
@@ -82,7 +83,7 @@ $individualStyle = "../assets/css/favorite.css";
         success:function(response){
           request.open('POST','../Model/deleteFavorite.php',true);
           request.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-          request.onreadyStateChange = function(){
+          request.onreadystatechange = function(){
             if(this.readyState === 4 && this.status === 200){
               window.location = './favorites.php';
             }
@@ -92,9 +93,60 @@ $individualStyle = "../assets/css/favorite.css";
       });
     });
   });
+
+  document.querySelectorAll('.unfavorite-button').forEach(button=>{
+    button.addEventListener('click',function(event){
+      event.target.disabled = true;
+
+      var request = new XMLHttpRequest();
+      var bookId = event.target.id;
+
+      $.ajax({
+        type:'POST',
+        url:'../Model/set_book_id.php',
+        data:{bookId:bookId},
+        success:function(response){
+          request.open('POST','../Model/deleteFavorite.php',true);
+          request.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+          request.onreadystatechange = function(){
+            if(this.readyState === 4 && this.status === 200){
+              window.location = './favorites.php';
+            }
+          }
+          request.send();
+        }
+      });
+    });
+  });
+
+
+  document.querySelectorAll('.more-button').forEach(button=>{
+      button.addEventListener('click', function(event){
+        event.target.disabled = true;
+        var request = new XMLHttpRequest();
+        var Title = event.target.id;
+
+        $.ajax({
+          type:'POST',
+          url:'../Model/set_Book_title.php',
+          data:{Title:Title},
+          success: function(response){
+
+            request.open('POST','../Model/set_Book_Title.php',true);
+            request.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+            request.onreadystatechange = function(){
+              if(this.readyState === 4 && this.status === 200){
+                window.location = './readMoreFavorites.php';
+              }
+            }
+            request.send();
+          }
+        });
+      });
+  });
 </script>
   </div>
 </div>
-<!-- <?php include "footer.html"?> -->
+<?php include "footer.html"?>
   </body>
 </html>
