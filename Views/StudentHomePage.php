@@ -7,18 +7,20 @@ require_once "./navbar.php";
 <html>
   <head>
     <link rel="stylesheet" href="../assets/css/StudentHomePageStyle.css">
+   
   </head>
   <body>
   <div class = "wrapper">
 <div class ="container">
-  <div class = "row">
+  <div class = "row" id = "row"> 
+    
     <?php
       $query = "SELECT * FROM books";
       $books = $db->query($query);
       while($row=$books->fetch_assoc())
       {
         echo "<div class='col-sm-4 mb-3 mb-sm-0'>
-        <div class='card' style='width:18rem;'>
+        <div class='card'>
         <img src='data:image/png;base64," . base64_encode($row['Image']) . "' class='card-img-top' alt='photo'>
         <div class='card-body'>
         <h6 class='card-title'>".$row['Title']."</h6>
@@ -39,51 +41,16 @@ require_once "./navbar.php";
       }
 
       $db->close();
-?>
+?> 
 
-
+<!-- <script src="../Controller/displayBooks.js"></script> -->
 
 
       <!-- //Adding functionality to the ordered button -->
     
-<script src="../Controller/orderScript.js"></script>
-<script src='../Controller/favoriteScript.js'></script>
-<script>
-document.querySelectorAll('.more-button').forEach(button => {
-  button.addEventListener('click', function() {
-    console.log( button.id);
-    var bookId = button.id;
-    // button.disabled =true;
-    
-    $.ajax({
-      type: 'POST',
-      url: '../Model/set_book_id.php',
-      data: {bookId: bookId},
-      success: function() {
-
-      
-        var req = new XMLHttpRequest();
-            req.open('GET','../Model/get_book_info.php',true);
-            console.log("<?php echo $_SESSION['bookId']?>");
-            req.onreadystatechange = function() {
-              
-              if (this.readyState == 4 && this.status == 200) {
-                console.log(this.responseText);
-                let info = JSON.parse(this.responseText);
-
-                document.getElementById('side-p').innerHTML = "<b>Title: " +info['title'] +'<br>Author: '+ info['author']+"</b><br>"+info['description'];
-                document.getElementsByClassName('side-panel')[0].style.transition = '600ms';
-                document.getElementsByClassName('side-panel')[0].style.display = 'block';
-              }
-            };
-            req.send();
-            
-      }
-    });
-   
-  });
-});
-</script>
+<script defer src="../Controller/orderScript.js"></script>
+<script defer src='../Controller/favoriteScript.js'></script>
+<script defer src="../Controller/moreScript.js"></script>
 
   </div>
 </div>

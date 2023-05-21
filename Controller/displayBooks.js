@@ -1,27 +1,12 @@
-const searchBtn = document.querySelector("button[type='submit']");
-const searchInput = document.getElementById("search");
-const row1 = document.getElementById("row");
-searchBtn.addEventListener('click', function()
+const request = new XMLHttpRequest();
+const row = document.getElementById("row");
+request.onreadystatechange = function()
 {
-    let value = searchInput.value;
-    console.log("searched for "+value);
-
-    var request = new XMLHttpRequest();
-    
-
-    request.onreadystatechange = function()
-    {
-        if(request.readyState === 4 && request.status===200)
+    if(request.readyState === 4 && request.status === 200)
+    { 
+        let bookList = JSON.parse(request.responseText);
+        for(let i = 0 ; i<bookList.length;i++)
         {
-            
-            let bookList = JSON.parse(request.response);
-            if(value!="")
-            {
-            row1.innerHTML = "";
-            for(let i = 0 ; i<bookList.length;i++)
-        {
-            if(bookList[i].Title.toUpperCase().includes(value.toUpperCase()))
-            {
             let div1 = document.createElement("div");
             div1.setAttribute("class","col-sm-4 mb-3 mb-sm-0");
             
@@ -99,14 +84,8 @@ searchBtn.addEventListener('click', function()
             div1.appendChild(cardDiv);
             row.appendChild(div1);
         }
-        }
     }
-        }
-    }
-    
-    request.open("GET","../Model/get_books.php");
-    request.send();
-   
-});
-
+}
+request.open("GET","../Model/get_books.php");
+request.send();
 

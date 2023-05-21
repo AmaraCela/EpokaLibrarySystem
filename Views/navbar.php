@@ -89,11 +89,11 @@ include "../Model/connection.php";
                     <li class="nav-item"><a class="nav-link" href="./feedback.html" target="_blank">Feedback</a>
                     </li>
                 <li>  
-                <form class="d-flex" role="search" onsubmit="return false">
+                <form nethod = "GET" class="d-flex" role="search" onsubmit="return false">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id ="search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
-                <script src='../Controller/searchScript.js'></script>
+                <script defer src='../Controller/searchScript.js'></script>
                 </li>
                     <!-- Profile dropdown -->
                     <li class="nav-item dropdown">

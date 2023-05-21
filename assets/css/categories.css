@@ -8,7 +8,7 @@
 
 }
 
-.checkbox-item{
+.radio-item{
     display: inline-block;
     width: 10px;
 }
@@ -75,7 +75,7 @@ footer{
     margin-right: 0px;
     align-items: center;
     width: 10px;
-    max-height: 200px;
+    max-height: 250px;
     flex: 1 0 25%;
     border-radius: 0%!important;
     border-color: #01458c;
@@ -104,7 +104,7 @@ footer{
 
     flex: 1 0 25%;
     max-width: 40%;
-    height: 200px;
+    height: auto;
     margin-bottom: 10px;
 
     
