@@ -67,5 +67,5 @@ countryInput.addEventListener('change',()=>{
 
 let signup = document.getElementById['submit'];
 document.addEventListener('submit',()=>{
-    window.location("../Views/signup.php");
+    window.location = "../Views/login.php";
 });
