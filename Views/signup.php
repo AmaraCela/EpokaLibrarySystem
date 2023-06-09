@@ -54,7 +54,7 @@
             </div>
               <div class = "pt-1 mb-4">
                 <button class = "btn btn-default btn-dark btn-lg btn-block"
-                        type = "submit" name = "signUp">Sign Up</button>
+                        type = "submit" name = "signUp" id="submit">Sign Up</button>
               </div>
               <script src = "../Controller/ApINumbers.js"></script>
           </form>
