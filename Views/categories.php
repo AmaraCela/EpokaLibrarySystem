@@ -24,25 +24,25 @@ $title = "Categories";
         
         while($row=$res->fetch_assoc())
         {
-          echo"<input type = 'checkbox' class='checkbox-item' name='category-checkBox' id='".$row['Genre']."' value='".$row['Genre']."'> <label class='side-label' for='".$row["Genre"]."'>".$row['Genre']."</label>" ;
+          echo"<input type = 'radio' class='radio-item' name='category-radio' id='".$row['Genre']."' value='".$row['Genre']."'> <label class='side-label' for='".$row["Genre"]."'>".$row['Genre']."</label>" ;
             
         }
         ?>
-        <button id='choose'>Choose</button>
+        <!-- <button id='choose'>Choose</button> -->
 
         </form>
         <script>
-          document.getElementById("choose").addEventListener('click',function()
+          document.getElementById("form").addEventListener('change',function()
           {
-            let checkboxes = Array.from(document.getElementsByClassName('checkbox-item'));
+            let radios = Array.from(document.getElementsByClassName('radio-item'));
             
             let genres = new Array();
             
-            for(let i=0;i<checkboxes.length;i++)
+            for(let i=0;i<radios.length;i++)
             {
-              if(checkboxes[i].checked)
+              if(radios[i].checked)
               {
-                genres.unshift(checkboxes[i].id);
+                
               }
             }
           });

@@ -2,9 +2,10 @@
 session_start();
 include "../Model/connection.php";
 
-if(isset($_POST['valuee']))
+if(isset($_GET['valuee']))
 {
-    $_SESSION['value'] = $_POST['valuee'];
+    $_SESSION['valuee'] = $_GET['valuee'];
 }
-echo $_SESSION['value'];
+var_dump($_SESSION['valuee']);
+echo $_SESSION['valuee'];
 ?>
