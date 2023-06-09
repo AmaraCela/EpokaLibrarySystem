@@ -22,7 +22,6 @@ $('.add').click(function() {
 $(document).on('click', '.save', function() {
 var row = $(this).parents('tr');
 var Name = row.find('input[name="Name"]').val();
-
 // Make an AJAX call to update the database
 $.ajax({
 url: '../Model/save-to-database.php',

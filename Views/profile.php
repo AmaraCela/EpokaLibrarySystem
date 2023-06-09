@@ -1,5 +1,6 @@
 <?php
 $title = "Profile";
+include '../Model/connection.php';
 // $individualStyle = '../assets/css/profile.css';
 require_once "./navbar.php";
 ?>
@@ -214,11 +215,48 @@ require_once "./navbar.php";
         </div>
     </div>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <script>
+  
+  $(document).on('click', '.edit', function() {
+  // document.getElementById("name").disabled=false;
+  $(this).parent().siblings('td.data').each(function() {
+    var content = $(this).html();
+    var std = $(this).html('<input value="' + content + '" />');
+    console.log(std);
+  });
+  $(this).siblings('.save').show();
+});
+$(document).on('click', '.save', function() {
+  $('input').each(function() {
+    var content = $(this).val();
+    $(this).html(content);
+    $(this).contents().unwrap();
+  });  
+  $(this).siblings('.edit').show();
+  
+});
+$('.add').click(function() {
+  $(this).parents('table').append('<tr><td class="data"></td><td class="data"></td><td class="data"></td><td><button class="save">Save</button><button class="edit">Edit</button> <button class="delete">Delete</button></td></tr>');  
+});
+$(document).on('click', '.save', function() {
+var row = $(this).parents('tr');
+var Name = row.find('input[name="Name"]').val();})
+</script>
+        <?php 
+          // $row1Val = $row['Name'];
+          // $row2Val = $row['Surname'];
+          // // $row3Val = $row['Email'];
+          // $row4Val = $row['PhoneNumber'];
+          // $row5Val = $row['Password'];
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="../Controller/updateData.js">
-
+          // $insertQuery = "UPDATE `student` SET `Name`='$row1Val',`Surname`='$row2Val',
+          // `PhoneNumber`='$row4Val',`Password`='$row5Val'";
+        ?> -->
+      
+       <script src="../Controller/updateData.js">
     </script>
+
 <?php include 'footer.html'?>
   </body>
 </html>
