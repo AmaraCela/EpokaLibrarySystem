@@ -54,7 +54,7 @@ while ($row = $titles->fetch_assoc())
     <button id ='".$row['BookId']."' class ='btn btn-primary order-button'>Unorder</button>
     </li>
     <li class='buttons-li'>
-    <button class ='btn btn-primary'><img src='../assets/images/favorite.png' id ='".$row['BookId']."' style='width:25px'></button>
+    <button class ='btn btn-primary favorite-button'><img src='../assets/images/favorite.png' id ='".$row['BookId']."' style='width:25px'></button>
     </li>
     </ul>
     </div>
@@ -98,7 +98,7 @@ while ($row = $titles->fetch_assoc())
     </script>
 
 <script defer src='../Controller/favoriteScript.js'></script>
-<script defer src="../Controller/moreScript.js"></script>
+<!-- <script defer src="../Controller/moreScript.js"></script> -->
 </div>
 </div>
 <!-- <?php

@@ -41,9 +41,12 @@ document.querySelectorAll('.favorite-button').forEach(button => {
         let array = JSON.parse(reqq.response);
         for(let i=0;i<array.length;i++)
         {
-          // console.log(document.querySelector("button img[id='"+array[i]+"']"));
+          
+          if(document.querySelector("button img[id='"+array[i]+"']"))
+        {console.log(document.querySelector("button img[id='"+array[i]+"']"));
           document.querySelector("button img[id='"+array[i]+"']").parentElement.disabled = true;
         }
+      }
     }
   }
 
