@@ -42,7 +42,18 @@ $title = "Categories";
             {
               if(radios[i].checked)
               {
-                
+                var genre =radios[i].id;
+                $.ajax({
+                                        type : "POST",
+                                        url:"../Model/set_genre_id.php",
+                                        data:{genre:genre},
+                                        success:function(response)
+                                        {
+                                            console.log(response);
+                                            window.location = '../Views/categories.php';
+                                        }
+                                        
+                                    });
               }
             }
           });
@@ -71,7 +82,7 @@ $title = "Categories";
             <button title='Order book' id ='".$row['BookId']."' class ='btn btn-primary order-button'>Order</button>
             </li>
             <li class='buttons-li'>
-            <button class ='btn btn-primary'><img src='../assets/images/favorite.png' style='width:25px'></button>
+            <button class ='btn btn-primary favorite-button'><img src='../assets/images/favorite.png' style='width:25px'></button>
             </li>
             </ul>
             </div>
@@ -81,7 +92,7 @@ $title = "Categories";
          }
          $db->close();
         ?>
-        <script src="../Controller/orderScript.js"></script>
+        <script defer src="../Controller/orderScript.js"></script>
         </div>
 </div>
  </body>

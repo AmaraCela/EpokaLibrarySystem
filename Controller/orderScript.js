@@ -1,9 +1,11 @@
+function order (){
 document.querySelectorAll('.order-button').forEach(
     button=>{
         button.addEventListener('click',function(event)
         {
                 button.disabled = true;
                 
+                console.log("clcikeee");
                 //The Id of the clicked element
                 var bookId = button.id;
 
@@ -34,10 +36,6 @@ document.querySelectorAll('.order-button').forEach(
 
                 }
                 request.send();
-
-
-
-
         });
     }
 );
@@ -53,10 +51,15 @@ document.querySelectorAll('.order-button').forEach(
       var array =JSON.parse(req.response);
       for(let i=0;i<array.length;i++)
       {
+        if(document.querySelector("button[title='Order book'][id='"+array[i]+"']"))
+        {
         
-        console.log(document.querySelector("button[title='Order book'][id='"+array[i]+"']"));
         document.querySelector("button[title='Order book'][id='"+array[i]+"']").disabled = true;
+        console.log(document.querySelector("button[title='Order book'][id='"+array[i]+"']"));
+
+        }
       }
     }
   }
   req.send();
+}

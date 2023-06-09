@@ -49,6 +49,12 @@ require_once "./navbar.php";
       <!-- //Adding functionality to the ordered button -->
     
 <script defer src="../Controller/orderScript.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    order();
+  });
+</script>
+
 <script defer src='../Controller/favoriteScript.js'></script>
 <script defer src="../Controller/moreScript.js"></script>
 

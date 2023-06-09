@@ -72,6 +72,7 @@ request.onreadystatechange = function()
             
             save.setAttribute("class","btn btn-primary favorite-button");
             
+            
             let favImg = document.createElement("img");
             favImg.setAttribute("src","../assets/images/favorite.png");
             favImg.setAttribute("id",bookList[i].BookId);

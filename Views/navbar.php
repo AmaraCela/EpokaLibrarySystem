@@ -91,9 +91,9 @@ include "../Model/connection.php";
                 <li>  
                 <form nethod = "GET" class="d-flex" role="search" onsubmit="return false">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id ="search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <button class="btn btn-outline-success" type="submit" >Search</button>
                 </form>
-                <script defer src='../Controller/searchScript.js'></script>
+                <script defer src='../Controller/searchJs.js'></script>
                 </li>
                     <!-- Profile dropdown -->
                     <li class="nav-item dropdown">
