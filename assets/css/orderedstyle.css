@@ -20,15 +20,16 @@ body{
 }
 .card{
     flex:1 0 50%;
-    flex-direction: row;
+    flex-direction: row !important;
     position: relative;
     /* align-items: center; */
     width: 10px;
     max-height: 200px;
     border-color: #01458c;
+    margin: 10px;
 }
 .card-img-top{
-    width: 150px; height: 200px;
+    width: 150px!important; height: 200px;
 }
 .btn.btn-primary
 {

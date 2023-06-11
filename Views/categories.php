@@ -94,7 +94,7 @@ $title = "Categories";
          $db->close();
         ?>
         <script defer src="../Controller/orderScript.js"></script>
-        </div>
+      </div>
 </div>
  </body>
 <?php
