@@ -13,7 +13,10 @@ require_once "./navbar.php";
   <div class = "wrapper">
 <div class ="container">
   <div class = "row" id = "row"> 
-    
+    <p class="error">
+      No items match your search! <br>
+      Search for another keyword or go back to all books.
+    </p>
     <?php
       $query = "SELECT * FROM books";
       $books = $db->query($query);
@@ -82,6 +85,5 @@ require_once "./navbar.php";
 </div>
 <?php
 require_once "./footer.html"?>
-
-  </body>
+</body>
 </html>

@@ -1,6 +1,11 @@
 <?php
 session_start();
 include "../Model/connection.php";
+if(!isset($_SESSION['email']))
+{
+  header("Location:./login.php");
+  exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -115,10 +120,25 @@ include "../Model/connection.php";
           </a>
                     <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="./profile.php">My Profile</a></li>
-                            <li><a class="dropdown-item" href="./login.php">Log Out</a></li>   
+                            <li><a class="dropdown-item" href="" id="log-out">Log Out</a></li>   
                         </ul> 
                     </li>
                 </ul>
+                <script>
+                    document.getElementById("log-out").addEventListener("click",function(){
+                        var req = new XMLHttpRequest();
+                        req.open("POST","../Controller/killSession.php");
+                        req.onreadystatechange = function()
+                        {
+                            if(req.readyState===4 && req.status==200)
+                            {
+                                window.location = "./login.php";
+                            }
+
+                        }
+                        req.send();
+                    });
+                </script>
         </div>
         </div>
     </nav>

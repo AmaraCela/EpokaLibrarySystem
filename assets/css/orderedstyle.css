@@ -82,6 +82,13 @@ body{
     cursor: pointer;
     transition: 200ms;
 }
+.no-orders{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    color: rgba(187, 137, 0, 1);
+    text-align: center;
+    margin-left: 33%;
+}
 
 @media screen and (max-width:1000px)
 {

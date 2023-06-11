@@ -29,6 +29,17 @@
   padding-left: 0px;
 }
 
+.error
+{
+  color: rgba(187, 137, 0, 1);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px;
+  display: none;
+  line-height: 30px;
+  padding: 30px;
+  justify-content: center;
+}
+
 .card
 {
   display: flex;
@@ -202,7 +213,7 @@
     display: none;
     box-shadow: 10px 10px rgb(236, 236, 236);
     flex-direction: column;
-    
+    transition: 600ms;
 
 }
 

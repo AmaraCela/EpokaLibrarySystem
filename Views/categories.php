@@ -24,7 +24,7 @@ $title = "Categories";
         
         while($row=$res->fetch_assoc())
         {
-          echo"<input type = 'radio' class='radio-item' name='category-radio' id='".$row['Genre']."' value='".$row['Genre']."'> <label class='side-label' for='".$row["Genre"]."'>".$row['Genre']."</label>" ;
+          echo"<input type = 'button' class='radio-item' name='category-radio' id='".$row['Genre']."' value='".$row['Genre']."'>" ;
             
         }
         ?>
@@ -32,31 +32,24 @@ $title = "Categories";
 
         </form>
         <script>
-          document.getElementById("form").addEventListener('change',function()
-          {
-            let radios = Array.from(document.getElementsByClassName('radio-item'));
-            
-            let genres = new Array();
-            
-            for(let i=0;i<radios.length;i++)
-            {
-              if(radios[i].checked)
-              {
-                var genre =radios[i].id;
-                $.ajax({
-                                        type : "POST",
-                                        url:"../Model/set_genre_id.php",
-                                        data:{genre:genre},
-                                        success:function(response)
-                                        {
-                                            console.log(response);
-                                            window.location = '../Views/categories.php';
-                                        }
+
+        document.querySelectorAll("input[class='radio-item']").forEach(button=>{
+          button.addEventListener("click",function(){
+            var genre =button.id;
+            $.ajax({
+                    type : "POST",
+                    url:"../Model/set_genre_id.php",
+                    data:{genre:genre},
+                    success:function(response)
+                    {
+                        console.log(response);
+                        window.location = '../Views/categories.php';
+                    }
                                         
-                                    });
-              }
-            }
+                  });
           });
+        });
+       
         </script>
     </div>
         <div class="row">
@@ -64,6 +57,13 @@ $title = "Categories";
          $sql = "SELECT * FROM `books` 
          WHERE `Genre` =  '{$_SESSION['genre']}'";
          $titles = $db->query($sql);
+         if(mysqli_num_rows($titles)==0)
+         {
+          echo"
+          <p class='error-msg'>Sorry! No books can be momentarily found for the chosen category:".$_SESSION['genre']."</p>
+          ";
+         }
+
          while($row = $titles->fetch_assoc())
          {
             echo"
@@ -90,6 +90,7 @@ $title = "Categories";
             </div>
             ";
          }
+
          $db->close();
         ?>
         <script defer src="../Controller/orderScript.js"></script>

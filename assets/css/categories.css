@@ -8,9 +8,21 @@
 
 }
 
+.text{
+    font-size: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:rgba(187, 137, 0, 1);
+}
 .radio-item{
     display: inline-block;
-    width: 10px;
+    color: #01458c;
+    background-color: #bbc0ce;
+    border-color: #01458c;
+    margin: 7px;
+}
+
+.radio-item:hover{
+    background-color:rgba(187, 137, 0, 1) ;
 }
 .side-label{
     display: inline;
@@ -217,6 +229,11 @@ footer{
     max-width: 100%;}
 }
 
+.error-msg{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: maroon;
+    font-size: 20px;
+}
 
 /* ----------------------------------side panel style--------------------------------- */
 
