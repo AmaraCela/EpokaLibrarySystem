@@ -1,7 +1,6 @@
 <?php
 include "../Model/connection.php";
 session_start();
-
 $query = "SELECT * FROM `favorites` WHERE `id` = '{$_SESSION['id']}'";
 $favorites = $db->query($query);
 $disabled = array();

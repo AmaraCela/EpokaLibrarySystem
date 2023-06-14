@@ -55,10 +55,10 @@ if(!isset($_SESSION['email']))
                             //The results of the execution of the query are fetched one row by one
                             while($row=$genres->fetch_assoc())
                             {
-                                echo"<li><a class='dropdown-item' href='./categories.php' onclick = 'return getGenre(this)' id='".$row['Genre']."'>".$row['Genre']."</a></li>";
+                                echo"<li><a class='dropdown-item' href='./categories.php?genre=".$row['Genre']."' id='".$row['Genre']."'>".$row['Genre']."</a></li>";
                             }
                             ?>
-                            <script>
+                            <!-- <script>
                                 function getGenre(a)
                                 {
                                     console.log(a);
@@ -78,7 +78,7 @@ if(!isset($_SESSION['email']))
                                     
                                    return false; 
                                 }
-                            </script>
+                            </script> -->
         
                         </ul>
                     </li>

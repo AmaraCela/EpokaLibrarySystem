@@ -21,7 +21,6 @@ $title = "Categories";
         $query = "SELECT DISTINCT `Genre` FROM `books`";
         $res = $db->query($query);
         
-        
         while($row=$res->fetch_assoc())
         {
           echo"<input type = 'button' class='radio-item' name='category-radio' id='".$row['Genre']."' value='".$row['Genre']."'>" ;
@@ -36,17 +35,7 @@ $title = "Categories";
         document.querySelectorAll("input[class='radio-item']").forEach(button=>{
           button.addEventListener("click",function(){
             var genre =button.id;
-            $.ajax({
-                    type : "POST",
-                    url:"../Model/set_genre_id.php",
-                    data:{genre:genre},
-                    success:function(response)
-                    {
-                        console.log(response);
-                        window.location = '../Views/categories.php';
-                    }
-                                        
-                  });
+            window.location = '../Views/categories.php?genre='+genre;
           });
         });
        
@@ -55,7 +44,7 @@ $title = "Categories";
         <div class="row">
         <?php
          $sql = "SELECT * FROM `books` 
-         WHERE `Genre` =  '{$_SESSION['genre']}'";
+         WHERE `Genre` =  '{$_GET['genre']}'";
          $titles = $db->query($sql);
          if(mysqli_num_rows($titles)==0)
          {
