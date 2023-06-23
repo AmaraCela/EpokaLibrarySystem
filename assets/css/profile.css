@@ -73,3 +73,8 @@ input[type=file]{
   color:#00458C;
   text-align: center;
 }
+
+#edit{
+  background-color: #072963;
+  border: none;
+}
