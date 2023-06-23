@@ -125,17 +125,9 @@ require_once "./navbar.php";
                 echo "First Name: ";
               echo "</td>";
 
-              
               echo "<td class='data name' id='name'> $row[Name] ";
               echo "</td>";
-              echo "<td>";
-              echo"<button id = 'editName' class = 'edit btn-black btn-default' name = 'Edit' >
-              <i class='fa-regular fa-pen-to-square'></i></button>";
-              echo "</td>";
-              echo "<td>";
-              echo"<button id = 'saveName' class = 'saveName btn-black btn-default' name = 'Save' >
-              <i class='fa-regular fa-floppy-disk'></i></button>";
-              echo "</td>";
+        
             echo "</tr>";
 
             echo "<tr class = 'cel'>";
@@ -145,14 +137,6 @@ require_once "./navbar.php";
 
               echo "<td class = 'data'>";
                 echo $row['Surname'];
-              echo "</td>";
-              echo "<td>";
-              echo"<button id = '$_SESSION[id]' class = 'edit btn-black btn-default' name = 'Edit' >
-              <i class='fa-regular fa-pen-to-square'></i></button>";
-              echo "</td>";
-              echo "<td>";
-              echo"<button id = 'saveSurname' class = 'saveSurname btn-black btn-default' name = 'Save' >
-              <i class='fa-regular fa-floppy-disk'></i></button>";
               echo "</td>";
             echo "</tr>";
 
@@ -164,14 +148,6 @@ require_once "./navbar.php";
               echo "<td class = 'data'>";
                 echo $row['Email'];
               echo "</td>";
-              echo "<td>";
-              echo"<button id = 'edit' class = 'edit btn-black btn-default' name = 'Edit' disabled>
-              <i class='fa-regular fa-pen-to-square'></i></button>";
-              echo "</td>";
-              echo "<td>";
-              echo"<button id = 'save' class = 'save btn-black btn-default' name = 'Save' disabled>
-              <i class='fa-regular fa-floppy-disk'></i></button>";
-              echo "</td>";
             echo "</tr>";
 
             echo "<tr class = 'cel'>";
@@ -181,14 +157,6 @@ require_once "./navbar.php";
 
               echo "<td class = 'data'>";
                 echo $row['PhoneNumber'];
-              echo "</td>";
-              echo "<td>";
-              echo"<button id = 'edit' class = 'edit btn-black btn-default' name = 'Edit' >
-              <i class='fa-regular fa-pen-to-square'></i></button>";
-              echo "</td>";
-              echo "<td>";
-              echo"<button id = 'save' class = 'save btn-black btn-default' name = 'Save' >
-              <i class='fa-regular fa-floppy-disk'></i></button>";
               echo "</td>";
             echo "</tr>";
 
@@ -200,26 +168,17 @@ require_once "./navbar.php";
               echo "<td class = 'data'>";
                 echo $row['Password'];
               echo "</td>";
-              echo "<td>";
-              echo"<button id = 'edit' class = 'edit btn-black btn-default' name = 'Edit' >
-              <i class='fa-regular fa-pen-to-square'></i></button>";
-              echo "</td>";
-              echo "<td>";
-              echo"<button id = 'save' class = 'save btn-black btn-default' name = 'save' >
-              <i class='fa-regular fa-floppy-disk'></i></button>";
-              echo "</td>";
+          
             echo "</tr>";
           echo "</table>";
         ?>
+        <button class="btn btn-primary" id="edit"><a href="../Controller/updateData.php?did=<?php echo $_SESSION['id']; ?>" class="btn btn-primary" id="edit">
+  Edit
+</a></button>
       </table>
         </div>
     </div>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <!-- <script src="../Controller/updateData.js"> -->
-    </script>
-    <?php include "../Controller/updateData.php"?>
-
 <?php include 'footer.html'?>
   </body>
 </html>
