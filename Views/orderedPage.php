@@ -48,9 +48,6 @@ while ($row = $titles->fetch_assoc())
     <p class='date-paragraph'>You ordered this book on: ".$row["DateOrdered"]."</p><hr>
     <ul class='buttons-ul'>
     <li class='buttons-li'>
-    <a href='#' class='btn btn-primary' '>More</a>
-    </li>
-    <li class='buttons-li'>
     <button id ='".$row['BookId']."' class ='btn btn-primary order-button'>Unorder</button>
     </li>
     <li class='buttons-li'>

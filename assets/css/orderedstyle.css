@@ -95,9 +95,22 @@ body{
 @media screen and (max-width:1000px)
 {
     .card{
-        max-height: 300px;
+        max-height: 500px;
     }
     .card-img-top{
         height: 100%;
+    }
+}
+
+@media (min-width: 576px)
+{.col-sm-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+}
+}
+
+@media screen and (max-width:576px) {
+    .col-sm-4 {
+    height: 300px;
     }
 }
