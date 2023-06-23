@@ -101,7 +101,7 @@ while ($row = $titles->fetch_assoc())
 <!-- <script defer src="../Controller/moreScript.js"></script> -->
 </div>
 </div>
-<?php include "carousel.html" ?>
+<?php include "carousel.php" ?>
 <?php
 require_once "./footer.html";
 ?>

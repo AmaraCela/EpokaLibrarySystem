@@ -23,7 +23,7 @@ require_once "./navbar.php";
     <div class="container">
     <div class="card" style="width: 18rem">
     <?php
-    $sql = "SELECT * FROM `books` WHERE Title = '{$_SESSION['Title']}'";
+    $sql = "SELECT * FROM `books` WHERE Title = '{$_GET['title']}'";
     $result= $db->query($sql);
     if(mysqli_num_rows($result) > 0){
         $row = $result->fetch_assoc();
@@ -32,7 +32,7 @@ require_once "./navbar.php";
         echo "Image not available";
     }?>
   <div class="card-body">
-    <h5 class="card-title"><?php echo $_SESSION['Title']; ?></h5>
+    <h5 class="card-title"><?php echo $_GET['title']; ?></h5>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item"><b>Author: </b><?php echo $row['Author']?></li>
@@ -41,7 +41,7 @@ require_once "./navbar.php";
   </ul>
 </div>
 
-<div class="Title"><h1><?php echo $_SESSION['Title'] ?></h1>
+<div class="Title"><h1><?php echo $_GET['title'] ?></h1>
 <p><?php echo nl2br($row['newsReview'])?></p>
 <p><?php echo nl2br($row['moreRead'])?></p>
 </div>
