@@ -42,36 +42,6 @@ if(isset($_GET['did'])){
 </head>
 
 <body>
-  <!-- <div class="container my-5">
-    <form method="post">
-      <div class="mb-3">
-        <label class="form-label">Name</label>
-        <input type="text" class="form-control" name="name" placeholder="Enter your name" autocomplete="off" value="<?= $name ?>">
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Surname</label>
-        <input type="text" class="form-control" name="surname" placeholder="Enter your surname" autocomplete="off" value="<?= $surname ?>">
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Email</label>
-        <input type="email" class="form-control" name="email" placeholder="Enter your email" autocomplete="off" value="<?= $email ?>">
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Mobile</label>
-        <input type="text" class="form-control" name="mobile" placeholder="Enter your mobile" autocomplete="off" value="<?= $mobile ?>">
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Password</label>
-        <input type="password" class="form-control" name="password" placeholder="Enter your password" autocomplete="off" value="<?= $password ?>">
-      </div>
-
-      <button type="submit" class="btn btn-primary" name="submit">Update</button>
-    </form>
-  </div> -->
 
   <div class="login-wrap">
   <form method="post">
