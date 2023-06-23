@@ -3,7 +3,7 @@ include "../Model/connection.php";
 ?> -->
 <?php
 $title = "favorites";
-require_once './navbar.php'
+require_once './navbar.php';
 // $individualStyle = "../assets/css/favorite.css";
 ?>
 <!DOCTYPE html>

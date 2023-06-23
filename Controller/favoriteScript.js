@@ -1,8 +1,6 @@
 document.querySelectorAll('.favorite-button').forEach(button => {
     button.addEventListener('click', function(event) {
      
-      
-      
       // get the ID of the clicked element
     let bookId = event.target.id;
     button.disabled = true;
@@ -49,5 +47,4 @@ document.querySelectorAll('.favorite-button').forEach(button => {
       }
     }
   }
-
   reqq.send();

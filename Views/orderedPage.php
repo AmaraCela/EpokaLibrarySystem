@@ -101,8 +101,8 @@ while ($row = $titles->fetch_assoc())
 <!-- <script defer src="../Controller/moreScript.js"></script> -->
 </div>
 </div>
-<!-- <?php
+<?php
 require_once "./footer.html";
-?> -->
+?>
   </body>
 </html>
