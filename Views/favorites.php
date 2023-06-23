@@ -73,8 +73,8 @@ require_once './navbar.php';
 <script>
   document.querySelectorAll('.unfavorite-button').forEach(button=>{
     button.addEventListener('click',function(event){
-      event.target.disabled = true;
-
+      // event.target.disabled = true;
+      console.log(event.target.id);
       var request = new XMLHttpRequest();
       var bookId = event.target.id;
 
