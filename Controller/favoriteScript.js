@@ -2,9 +2,9 @@ document.querySelectorAll('.favorite-button').forEach(button => {
     button.addEventListener('click', function(event) {
      
       // get the ID of the clicked element
-    let bookId = event.target.id;
+    let bookId = button.children[0].id;
     console.log(bookId);
-    button.disabled = true;
+    //button.disabled = true;
   // make an AJAX POST request to a PHP script
   $.ajax({
     type: 'POST',
@@ -23,6 +23,7 @@ document.querySelectorAll('.favorite-button').forEach(button => {
         if (this.readyState === 4 && this.status === 200) {
           // Do something with the response if necessary
           console.log(this.responseText);
+          button.disabled = true;
         }
       };
       xhr.send();

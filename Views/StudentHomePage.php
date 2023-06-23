@@ -12,23 +12,24 @@ require_once "./navbar.php";
   <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true" style="margin-top:100px">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="../assets/images/epokaLib.jpeg" height="400px" class="d-block w-100" alt="...">
+      <img src="../assets/images/EPOKA.png" height="400px" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
       <img src="../assets/images/downloadLibb.jpg" height="400px" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="../assets/images/epokaLibb.jpg" height="400px" class="d-block w-100" alt="...">
-    </div>
+      <img src="../assets/images/epokaLibb.jpg" height="400px" class="d-block w-100" alt="..."> 
+    </div> 
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <button class="carousel-control-prev"  type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" style="background-color: rgba(187, 137, 0, 1);" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="carousel-control-next-icon"  style="background-color: rgba(187, 137, 0, 1);" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
+ 
 </div>
   <div class = "wrapper">
 <div class ="container">
@@ -71,14 +72,15 @@ require_once "./navbar.php";
 
       <!-- //Adding functionality to the ordered button -->
     
+
+
+<script defer src='../Controller/favoriteScript.js'></script>
 <script defer src="../Controller/orderScript.js"></script>
-<script>
+<script defer>
   document.addEventListener('DOMContentLoaded', function() {
     order();
   });
 </script>
-
-<script defer src='../Controller/favoriteScript.js'></script>
 <script defer src="../Controller/moreScript.js"></script>
 
   </div>
