@@ -11,6 +11,7 @@ $title = "Categories";
     <link rel = "stylesheet" href="../assets/css/categories.css">
   </head>
   <body>
+  
 <div class="container">
     <div class="side-div">
         <p class="text">
@@ -27,8 +28,6 @@ $title = "Categories";
             
         }
         ?>
-        <!-- <button id='choose'>Choose</button> -->
-
         </form>
         <script>
 
@@ -65,14 +64,10 @@ $title = "Categories";
             Genre:".$row['Genre']."<br>
             <ul class='buttons-ul'>
             <li class='buttons-li'>
-            <button class='btn btn-primary'>More</button>
-            </li>
-            <li class='buttons-li'>
             <button title='Order book' id ='".$row['BookId']."' class ='btn btn-primary order-button'>Order</button>
             </li>
             <li class='buttons-li'>
-            <button class ='btn btn-primary favorite-button'><img src='../assets/images/favorite.png' style='width:25px'></button>
-            </li>
+            <button title='Save book' class ='btn btn-primary favorite-button' ><img id='".$row['BookId']."' src='../assets/images/favorite.png' style='width:25px'></button></li>
             </ul>
             </div>
             </div>
@@ -82,7 +77,14 @@ $title = "Categories";
 
          $db->close();
         ?>
-        <script defer src="../Controller/orderScript.js"></script>
+        <script defer src="../Controller/orderScript.js">
+        </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    order();
+  });
+</script>
+<script defer src='../Controller/favoriteScript.js'></script>
       </div>
 </div>
  </body>
