@@ -79,12 +79,13 @@ $title = "Categories";
         ?>
         <script defer src="../Controller/orderScript.js">
         </script>
-<script>
+
+<script defer src='../Controller/favoriteScript.js'></script>
+<script defer>
   document.addEventListener('DOMContentLoaded', function() {
     order();
   });
 </script>
-<script defer src='../Controller/favoriteScript.js'></script>
       </div>
 </div>
  </body>

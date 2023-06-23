@@ -72,12 +72,12 @@ require_once './navbar.php';
     ?>
 <script>
   document.querySelectorAll('.unfavorite-button').forEach(button=>{
-    button.addEventListener('click',function(event){
-      // event.target.disabled = true;
-      console.log(event.target.id);
+    button.addEventListener('click',function(){
+     // event.target.disabled = true;
+     console.log(button.children[0]);
+      var bookId =button.children[0].id;
+      console.log(bookId);
       var request = new XMLHttpRequest();
-      var bookId = event.target.id;
-
       $.ajax({
         type:'POST',
         url:'../Model/set_book_id.php',
@@ -87,7 +87,7 @@ require_once './navbar.php';
           request.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
           request.onreadystatechange = function(){
             if(this.readyState === 4 && this.status === 200){
-              window.location = './favorites.php';
+             window.location = './favorites.php';
             }
           }
           request.send();
@@ -96,30 +96,30 @@ require_once './navbar.php';
     });
   });
 
-  document.querySelectorAll('.unfavorite-button').forEach(button=>{
-    button.addEventListener('click',function(event){
-      event.target.disabled = true;
+  // document.querySelectorAll('.unfavorite-button').forEach(button=>{
+  //   button.addEventListener('click',function(event){
+  //     event.target.disabled = true;
+  //     console.log(event.target.id);
+  //     var request = new XMLHttpRequest();
+  //     var bookId = event.target.id;
 
-      var request = new XMLHttpRequest();
-      var bookId = event.target.id;
-
-      $.ajax({
-        type:'POST',
-        url:'../Model/set_book_id.php',
-        data:{bookId:bookId},
-        success:function(response){
-          request.open('POST','../Model/deleteFavorite.php',true);
-          request.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-          request.onreadystatechange = function(){
-            if(this.readyState === 4 && this.status === 200){
-              window.location = './favorites.php';
-            }
-          }
-          request.send();
-        }
-      });
-    });
-  });
+  //     $.ajax({
+  //       type:'POST',
+  //       url:'../Model/set_book_id.php',
+  //       data:{bookId:bookId},
+  //       success:function(response){
+  //         request.open('POST','../Model/deleteFavorite.php',true);
+  //         request.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+  //         request.onreadystatechange = function(){
+  //           if(this.readyState === 4 && this.status === 200){
+  //             // window.location = './favorites.php';
+  //           }
+  //         }
+  //         request.send();
+  //       }
+  //     });
+  //   });
+  // });
 
 
   document.querySelectorAll('.more-button').forEach(button=>{
