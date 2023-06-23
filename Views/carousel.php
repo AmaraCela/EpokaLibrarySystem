@@ -4,7 +4,6 @@ include "../Model/connection.php";
 $query = "SELECT * FROM books WHERE Genre IN (SELECT Genre FROM books WHERE BookId IN(SELECT BookId FROM favorites 
 WHERE id = {$_SESSION['id']}))";
 $books = $db->query($query);
-$row=$books->fetch_assoc();
 ?>
 <div class="carousel">
     <div class="carousel__body">
@@ -13,6 +12,11 @@ $row=$books->fetch_assoc();
       </div>
         <div class="carousel__slider">
             <?php
+            if(mysqli_num_rows($books)==0)
+            {
+                $query = "SELECT * FROM books";
+                $books = $db->query($query);
+            }
             while($row=$books->fetch_assoc())
             {
               echo "

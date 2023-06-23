@@ -203,6 +203,13 @@
 
 }
 
+@media screen and (max-width:600px) {
+ #carouselExampleRide{
+  display: none;
+ } 
+  
+}
+
 /* ----------------------------------side panel style--------------------------------- */
 
 .side-panel{

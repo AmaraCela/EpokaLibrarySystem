@@ -71,7 +71,7 @@ if(!isset($_SESSION['email']))
                             
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="./feedback.html" target="_blank">Feedback</a>
+                    <li class="nav-item"><a class="nav-link" href="./feedback.php" target="_blank">Feedback</a>
                     </li>
                 <li>  
                 <form nethod = "GET" class="d-flex" role="search" onsubmit="return false">

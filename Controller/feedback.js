@@ -9,12 +9,12 @@ sendBtn.addEventListener("click",function()
        let request = new XMLHttpRequest();
        request.onreadystatechange = function()
        {
-        if(request,this.readyState == 4 && request.status ===200)
+        if(request.readyState == 4 && request.status ===200)
         {
             console.log("okay");
         }
        }
-       request.open("GET","../Model/feedback.php");
+       request.open("POST","../Model/feedback.php");
        request.send();
     }
 });
