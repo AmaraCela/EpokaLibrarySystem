@@ -11,5 +11,18 @@ $headers = $headers = "From: " . $email;// Replace with the sender's email addre
 if (mail($to, $subject, $message, $headers)) {
   echo "Email sent successfully!";
 } else {
-  echo "An error occurred while sending the email.";
+  exit("error");
+  //echo "An error occurred while sending the email.";
 }
+
+// require "../assets/PHPMailer-master/vendor/autoload.php";
+// use PHPMailer\PHPMailer\PHPMailer;
+// use PHPMailer\PHPMailer\SMTP;
+// $mail = new PHPMailer(true);
+
+// $mail ->isSMTP();
+// $mail->SMTPAuth = true;
+
+// $mail ->Host = "amaracela@gmail.com";
+// $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+// $mail->Port = 587;

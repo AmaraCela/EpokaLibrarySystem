@@ -126,7 +126,7 @@
     background-color: white;
     color:rgba(187, 137, 0, 1)!important;
 }
-@media screen and (max-width:990px) {
+@media screen and (max-width:1000px) {
   a.nav-link{
       margin-left: 40px;
   }
@@ -136,3 +136,4 @@
       top: 0;
   }
 }
+

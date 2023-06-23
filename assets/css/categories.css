@@ -1,4 +1,3 @@
-
 .side-div{
     background-color: lightgray;
     display: flex;
@@ -217,6 +216,17 @@ footer{
         padding: 0;
         align-items: center;
         justify-content:flex-end;
+        flex-direction: column;
+    }
+
+    .side-div
+    {
+        max-width: 300px;
+    }
+
+    .row
+    {
+        margin-top: 60px!important;
     }
 }
 .mb-3 {
