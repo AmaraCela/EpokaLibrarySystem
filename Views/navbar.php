@@ -58,27 +58,7 @@ if(!isset($_SESSION['email']))
                                 echo"<li><a class='dropdown-item' href='./categories.php?genre=".$row['Genre']."' id='".$row['Genre']."'>".$row['Genre']."</a></li>";
                             }
                             ?>
-                            <!-- <script>
-                                function getGenre(a)
-                                {
-                                    console.log(a);
-                                    window.stop();
-                                    var genre = a.id;
-                                    $.ajax({
-                                        type : "POST",
-                                        url:"../Model/set_genre_id.php",
-                                        data:{genre:genre},
-                                        success:function(response)
-                                        {
-                                            console.log(response);
-                                            window.location = '../Views/categories.php';
-                                        }
-                                        
-                                    });
-                                    
-                                   return false; 
-                                }
-                            </script> -->
+
         
                         </ul>
                     </li>

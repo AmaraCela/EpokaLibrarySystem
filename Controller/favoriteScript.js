@@ -3,6 +3,7 @@ document.querySelectorAll('.favorite-button').forEach(button => {
      
       // get the ID of the clicked element
     let bookId = event.target.id;
+    console.log(bookId);
     button.disabled = true;
   // make an AJAX POST request to a PHP script
   $.ajax({
