@@ -114,7 +114,7 @@ include "../Model/connection.php";
             ?>
           </a>
                     <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./profile.php">My Profile</a></li>
+                            <li><a class="dropdown-item" href="./profile2.php">My Profile</a></li>
                             <li><a class="dropdown-item" href="./login.php">Log Out</a></li>   
                         </ul> 
                     </li>

@@ -64,8 +64,3 @@ countryInput.addEventListener('change',()=>{
 
   phoneInput.placeholder = `+(${countryCode})`;
 });
-
-let signup = document.getElementById['submit'];
-document.addEventListener('submit',()=>{
-    window.location = "../Views/login.php";
-});
