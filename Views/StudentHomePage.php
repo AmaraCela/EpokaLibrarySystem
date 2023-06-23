@@ -7,9 +7,29 @@ require_once "./navbar.php";
 <html>
   <head>
     <link rel="stylesheet" href="../assets/css/StudentHomePageStyle.css">
-   
-  </head>
+   </head>
   <body>
+  <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true" style="margin-top:100px">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../assets/images/epokaLib.jpeg" height="400px" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../assets/images/downloadLibb.jpg" height="400px" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../assets/images/epokaLibb.jpg" height="400px" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
   <div class = "wrapper">
 <div class ="container">
   <div class = "row" id = "row"> 
