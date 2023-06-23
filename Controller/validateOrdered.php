@@ -11,6 +11,13 @@ while ($row = $orders->fetch_assoc())
     
 }
 
+$query = "SELECT * FROM books WHERE Stock = 0";
+$orders = $db->query($query);
+while ($row = $orders->fetch_assoc())
+{
+    array_push($toBeDisabled, $row['BookId']);
+    
+}
 $jsonArray = json_encode($toBeDisabled);
 echo $jsonArray;
 ?>
