@@ -138,7 +138,7 @@ require_once './navbar.php';
             request.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
             request.onreadystatechange = function(){
               if(this.readyState === 4 && this.status === 200){
-                window.location = './readMoreFavorites.php';
+                window.location = './readMoreFavorites.php?title='+Title+'';
               }
             }
             request.send();
@@ -197,7 +197,7 @@ require_once './navbar.php';
     <button class="third"></button>
   </div>
 </div> -->
-<?php include "carousel.html" ?>
+<?php include "carousel.php" ?>
 <?php include "footer.html"?>
   </body>
 </html>
