@@ -87,7 +87,7 @@ if(!isset($_SESSION['email']))
                     $query = "SELECT * FROM student WHERE Email = '$_SESSION[email]'";
                     $res = mysqli_query($db,$query);
                     $row = mysqli_fetch_assoc($res);
-            if($res){
+            if($row['Pic']){
               echo "<img src='data:image/jpeg;base64,".base64_encode($row['Pic'])."'class = 'img-circle profile-img' height=40 width=40>";
             }
             else{

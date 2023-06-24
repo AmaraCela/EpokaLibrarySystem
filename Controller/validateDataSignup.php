@@ -17,7 +17,9 @@ if (isset($_POST['signUp'])) {
     if (preg_match($emailPattern, $_POST['email'])){
       mysqli_query($db,"INSERT INTO `student`(`id`,`Name`, `Surname`, `Email`, `PhoneNumber`, `Password`)
       VALUES ('','$_POST[name]','$_POST[surname]','$_POST[email]','$_POST[phone]','$_POST[password]')");
-      
+      ?>
+      <script>window.location='../Views/login.php'</script>
+      <?php
     }
     else{
       ?>
