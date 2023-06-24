@@ -43,9 +43,9 @@ while ($row = $titles->fetch_assoc())
     <img src='data:image/png;base64," . base64_encode($row['Image']) . "' class='card-img-top' alt='photo'>
     <div class='card-body'>
     <h6 class='card-title'>".$row["Title"]."</h6>
-    <p class='card-text'>Author:".$row["Author"]."<br>
-    Genre:".$row["Genre"]."<br>
-    <p class='date-paragraph'>You ordered this book on: ".$row["DateOrdered"]."</p><hr>
+    <p class='card-text'><b>Author: </b>".$row["Author"]."<br>
+    <b>Genre: </b>".$row["Genre"]."<br>
+    <p class='date-paragraph'><b>You ordered this book on: </b>".$row["DateOrdered"]."</p><hr>
     <ul class='buttons-ul'>
     <li class='buttons-li'>
     <button id ='".$row['BookId']."' class ='btn btn-primary order-button'>Unorder</button>
