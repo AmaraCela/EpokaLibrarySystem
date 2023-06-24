@@ -154,7 +154,7 @@ echo $statusMsg;
         echo "</table>";
         ?>
         <button class="btn btn-primary" id="edit">
-          <a href="../Controller/updateData.php?did=<?php echo $_SESSION['id']; ?>" class="btn btn-primary" id="edit">
+          <a href="../Controller/updateData.php?did=<?php echo $row['id']; ?>" class="btn btn-primary" id="edit">
             Edit
           </a>
         </button>

@@ -19,7 +19,7 @@ if(isset($_GET['did'])){
     $mobile = $_POST['mobile'];
     $password = $_POST['password'];
 
-    $sql = "UPDATE `student` SET `Name`='$name', `Surname`='$surname', `Email`='$email',`PhoneNumber`='$mobile',`Password`='$password'";
+    $sql = "UPDATE `student` SET `Name`='$name', `Surname`='$surname', `Email`='$email',`PhoneNumber`='$mobile',`Password`='$password' WHERE id=$id";
     $result = mysqli_query($db, $sql);
     if($result){
       header('location: ../Views/profile.php');
