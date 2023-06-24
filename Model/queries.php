@@ -29,7 +29,7 @@ $books = 'CREATE TABLE `books` (
 //create table favorites
 $favorites = 'CREATE TABLE `favorites` (
   `id` int(11) NOT NULL,
-  `BookId` int(11) NOT NULL
+  `BookId` int(11) NOT NULL,
   PRIMARY KEY (`id`,`BookId`),
   FOREIGN KEY (`id`) REFERENCES `student` (`id`),
   FOREIGN KEY (`BookId`) REFERENCES `books` (`BookId`)
