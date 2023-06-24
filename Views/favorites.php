@@ -45,12 +45,16 @@ require_once './navbar.php';
 
       <div class='card-body'>
         <h6 class='card-title'>".$row["Title"]."</h6>
-        <p class='card-text'>Author:".$row["Author"]."<br>
-          Genre:".$row["Genre"]."<br>";
+        <p class='card-text'><b>Author: </b>".$row["Author"]."<br>
+          <b>Genre: </b>".$row["Genre"]."<br>";
         ?>
         <div class = "card-content card-text">
         <?php
-        echo"Description:".$row["Description"]."<br>";
+        $description = $row["Description"];
+        $limitedDescription = substr($description, 0, 200); 
+        $limitedDescription .="..";
+        echo "<b>Description:</b> " . $limitedDescription . "<br>";
+
         ?>
         </div>
         <?php
