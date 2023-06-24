@@ -84,8 +84,11 @@ if(!isset($_SESSION['email']))
                     <li class="nav-item dropdown">
                     <!-- <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profile</a> -->
                     <?php 
-            if($_SESSION['pic']!=""){
-              echo "<img src='data:image/jpeg;base64,".base64_encode($_SESSION['pic'])."'class = 'img-circle profile-img' height=40 width=40>";
+                    $query = "SELECT Pic FROM student WHERE Email = '$_SESSION[email]'";
+                    $pic = mysqli_query($db,$query);
+                    $row = mysqli_fetch_assoc($pic);
+            if($pic){
+              echo "<img src='data:image/jpeg;base64,".base64_encode($row['Pic'])."'class = 'img-circle profile-img' height=40 width=40>";
             }
             else{
                echo "<img src = '../assets/images/ProfilePIC.jpg' alt='pfp' id = 'default-pfp'>   "; 

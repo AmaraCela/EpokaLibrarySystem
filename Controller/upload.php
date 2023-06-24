@@ -3,9 +3,10 @@ session_start();
 include "../Model/Connection.php";
 
 $status = $statusMsg = '';
-
+// echo "<h1>HEYYYYYYYYYYYYYYYYYYYYYYYYYYYYY</h1>";
 if (isset($_POST["submit"])) {
     $status = 'error';
+
 
     if (!empty($_FILES["my_image"]["name"])) {
         // Get file info

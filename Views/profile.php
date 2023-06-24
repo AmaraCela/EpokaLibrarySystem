@@ -28,7 +28,7 @@ require_once "./navbar.php";
     $row = mysqli_fetch_assoc($sqli_var);
     ?>
 
-    <form action="" method="post" enctype="multipart/form-data" id="form_id" class="form_class">
+    <form action="./profile.php" method="post" enctype="multipart/form-data" id="form_id" class="form_class">
       <input type="file" name="my_image" class="imgUp" id="file">
       <div class="prof">
         <label for="file" class="file-style" id="label">
@@ -44,6 +44,46 @@ require_once "./navbar.php";
         <input type="submit" name="submit" value="Upload" id="submit" class="imgUp">
       </div>
       <div class="hello">
+        <?php $status = $statusMsg = '';
+// echo "<h1>HEYYYYYYYYYYYYYYYYYYYYYYYYYYYYY</h1>";
+if (isset($_POST["submit"])) {
+    $status = 'error';
+    if (!empty($_FILES["my_image"]["name"])) {
+        // Get file info
+        $fileName = basename($_FILES["my_image"]["name"]);
+        $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
+
+        // Allow certain file formats
+        $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
+
+        if (in_array($fileType, $allowTypes)) {
+            $image = $_FILES['my_image']['tmp_name'];
+            $imgContent = addslashes(file_get_contents($image));
+
+            // Update image content in the database
+            $update = mysqli_query($db, "UPDATE `student` SET `Pic` = '$imgContent' WHERE `Email` = '$_SESSION[email]'");
+
+            if ($update) {
+                $status = 'success';
+                $statusMsg = "Profile photo updated successfully.";
+                // $query = "SELECT Pic FROM `student` WHERE `Email`= '$_SESSION[email]'";
+                // $res = $db->query($query);
+                // $row = $res->fetch_assoc();
+                // echo "<img src='data:image/jpeg;base64," . base64_encode($row['Pic']) . "'
+                // class='img2 img-circle profile-img'>";
+
+            } else {
+                $statusMsg = "Sorry, there was an error uploading your file.";
+            }
+        } else {
+            $statusMsg = 'Sorry, only JPG, JPEG, PNG, and GIF files are allowed to upload.';
+        }
+    } else {
+        $statusMsg = 'Please select an image file to upload.';
+    }
+}
+echo $statusMsg;
+?>
         <h5 style="margin-top: 5%"><?php echo $_SESSION['login_user_name'] . " " . $_SESSION['login_user_surname']; ?></h5>
         <h6 style="font-weight: 100"><?php echo $_SESSION['email']; ?></h6>
       </div>
@@ -126,35 +166,45 @@ require_once "./navbar.php";
   </div>
 </div>
 
+
 <script>
-  $(document).ready(function () {
-    // Intercept the form submission
-    $('#form_id').submit(function (event) {
-      event.preventDefault(); // Prevent default form submit
 
-      // Create a FormData object
-      var formData = new FormData(this);
+  function validate ()
+  {
+    var photo = document.getElementById("file").value;
+    var req = new XMLHttpRequest();
 
-      // Perform AJAX request
-      $.ajax({
-        url: '../Controller/upload.php', // Set your PHP file path or endpoint
-        type: 'POST',
-        data: formData,
-        processData: false,
-        contentType: false,
-        success: function (response) {
-          // Handle success response
-          console.log(response);
-          // Update the profile photo dynamically (assuming response contains updated photo data)
-          $('.img2.profile-img').attr('src', response);
-        },
-        error: function (xhr, status, error) {
-          // Handle error response
-          console.log(xhr.responseText);
-        }
-      });
-    });
-  });
+    return false;
+  }
+
+  // $(document).ready(function () {
+  //   // Intercept the form submission
+  //   $('#form_id').submit(function (event) {
+  //     event.preventDefault(); // Prevent default form submit
+
+  //     // Create a FormData object
+  //     var formData = new FormData(this);
+
+  //     // Perform AJAX request
+  //     $.ajax({
+  //       url: '../Controller/upload.php', // Set your PHP file path or endpoint
+  //       type: 'POST',
+  //       data: formData,
+  //       processData: false,
+  //       contentType: false,
+  //       success: function (response) {
+  //         // Handle success response
+  //         console.log("heyyyyyyyyyyyyyyyyyy");
+  //         // Update the profile photo dynamically (assuming response contains updated photo data)
+  //         $('.img2.profile-img').attr('src', response);
+  //       },
+  //       error: function (xhr, status, error) {
+  //         // Handle error response
+  //         console.log(xhr.responseText);
+  //       }
+  //     });
+  //   });
+  // });
 </script>
 <?php include 'footer.html' ?>
 </body>
