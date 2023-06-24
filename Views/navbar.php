@@ -84,17 +84,17 @@ if(!isset($_SESSION['email']))
                     <li class="nav-item dropdown">
                     <!-- <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profile</a> -->
                     <?php 
-                    $query = "SELECT Pic FROM student WHERE Email = '$_SESSION[email]'";
-                    $pic = mysqli_query($db,$query);
-                    $row = mysqli_fetch_assoc($pic);
-            if($pic){
+                    $query = "SELECT * FROM student WHERE Email = '$_SESSION[email]'";
+                    $res = mysqli_query($db,$query);
+                    $row = mysqli_fetch_assoc($res);
+            if($res){
               echo "<img src='data:image/jpeg;base64,".base64_encode($row['Pic'])."'class = 'img-circle profile-img' height=40 width=40>";
             }
             else{
                echo "<img src = '../assets/images/ProfilePIC.jpg' alt='pfp' id = 'default-pfp'>   "; 
             }
-            if(isset($_SESSION['login_user_name'])&&isset($_SESSION['login_user_surname'])){
-              echo "\t",$_SESSION['login_user_name']," ",$_SESSION['login_user_surname']; 
+            if($res){
+              echo "\t",$row['Name']," ",$row['Surname']; 
             }
             else{
               echo"session is not set";

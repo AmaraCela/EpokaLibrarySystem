@@ -66,12 +66,9 @@ if (isset($_POST["submit"])) {
             if ($update) {
                 $status = 'success';
                 $statusMsg = "Profile photo updated successfully.";
-                // $query = "SELECT Pic FROM `student` WHERE `Email`= '$_SESSION[email]'";
-                // $res = $db->query($query);
-                // $row = $res->fetch_assoc();
-                // echo "<img src='data:image/jpeg;base64," . base64_encode($row['Pic']) . "'
-                // class='img2 img-circle profile-img'>";
-
+                ?>
+                <script>window.location="./profile.php"</script>
+                <?php
             } else {
                 $statusMsg = "Sorry, there was an error uploading your file.";
             }
